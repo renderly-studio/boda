@@ -1,0 +1,36 @@
+OM GENS CASEM · Web de la boda · Integració a Astro
+====================================================
+
+QUÈ HI HA EN AQUEST PAQUET
+--------------------------
+src/pages/index.astro   → la web sencera (una sola pàgina)
+public/assets/img/      → totes les imatges (fotos, gats, farolets, segell...)
+public/assets/fonts/    → New Icon Serif + New Icon Script
+public/manifest.json    → perquè es pugui instal·lar al mòbil
+public/sw.js            → perquè funcioni sense cobertura a la finca
+astro.config.mjs        → ja apunta a https://omgenscasem.art
+
+COM INTEGRAR-HO (a la terminal, dins de ~/projects/boda)
+--------------------------------------------------------
+1. Esborrar la plantilla d'exemple (NO toca .git ni el workflow):
+   rm -rf src/pages src/components src/layouts src/assets public
+
+2. Copiar aquests fitxers (ajusta la ruta si cal):
+   cp -r ~/Descargas/astro-final/src ~/Descargas/astro-final/public ~/Descargas/astro-final/astro.config.mjs ~/projects/boda/
+
+3. Veure-la en local:
+   npm run dev        → obre http://localhost:4321   (Ctrl+C per parar)
+
+4. Publicar:
+   git add .
+   git commit -m "La web de la boda"
+   git push
+
+DESPRÉS DE PUBLICAR
+-------------------
+· Omple el formulari un cop tu mateix → arribarà un correu d'activació
+  de FormSubmit a omgenscasem@gmail.com → confirma'l. A partir d'aquí,
+  totes les respostes dels convidats arriben soles.
+· La contrasenya dels convidats és: BODORRIO0207
+· Si canvies alguna cosa i no la veus, recarrega amb Ctrl+Shift+R
+  (el service worker guarda la web en memòria).

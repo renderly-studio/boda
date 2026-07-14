@@ -1,11 +1,2465 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Om gens casem · Marta ✦ Guille · 02.07.27
 ---
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marta ✦ Guille · 02 juliol 27 · Om gens casem</title>
+<meta name="description" content="Ens casem! 2 de juliol de 2027, Torre Sever, Caldes de Montbui. The Sunset Wedding.">
+<meta property="og:title" content="Marta ✦ Guille · 02 juliol 27">
+<meta property="og:description" content="The Sunset Wedding · Torre Sever, Caldes de Montbui. Om gens casem!">
+<meta property="og:image" content="https://omgenscasem.art/og.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://omgenscasem.art">
+<link rel="icon" type="image/png" href="/assets/img/abe9ccfd9c8.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#A4144F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fragment+Mono&display=swap" rel="stylesheet">
+<style is:inline>
+/* ═══════════════════════════════════════════════
+   OM GENS CASEM · Marta ✦ Guille · 02 juliol 27
+   Identitat: invitacions "The Sunset Wedding"
+   ═══════════════════════════════════════════════ */
 
-<Layout>
-	<Welcome />
-</Layout>
+@font-face {
+  font-family: 'New Icon Serif';
+  src: url('/assets/fonts/a7c4067deec.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'New Icon Script';
+  src: url('/assets/fonts/a1cae25a757.otf') format('opentype');
+  font-display: swap;
+}
+
+:root {
+  /* La posta de sol de les invitacions */
+  --ambre:        #F7A923;
+  --ambre-fosc:   #E3900E;
+  --taronja:      #DA5A13;
+  --taronja-fosc: #BC5616;
+  --magenta:      #A4144F;
+  --magenta-fosc: #7E0F3C;
+  --nit:          #3A0821;
+  --crema:        #F9F4DE;
+  --oliva:        #6E7B3F;
+
+  --serif:  'New Icon Serif', 'Didot', serif;
+  --script: 'New Icon Script', cursive;
+  --sans:   'Poppins', 'Helvetica Neue', sans-serif;
+
+  --ample: 620px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; font-size: 125%; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+body {
+  font-family: var(--sans);
+  font-weight: 300;
+  color: var(--crema);
+  background: var(--ambre);
+  line-height: 1.7;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* ── Titulars: inicial script + resta serif, com a les invitacions ── */
+.titol {
+  font-family: var(--serif);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  line-height: 1.45;
+  color: var(--crema);
+}
+.titol .ini {
+  font-family: var(--script);
+  text-transform: none;
+  font-size: 1.62em;
+  line-height: 0;
+  vertical-align: -0.09em;
+  letter-spacing: 0;
+  margin-right: -0.12em;
+}
+h1.titol { font-size: clamp(2.6rem, 9vw, 4.6rem); }
+h2.titol { font-size: clamp(1.9rem, 6vw, 2.9rem); }
+h3.titol { font-size: clamp(1.3rem, 4vw, 1.7rem); }
+
+/* ── Destell de 4 puntes (separador) ── */
+.destell {
+  display: block;
+  width: 26px; height: 26px;
+  margin: 2.4rem auto;
+  fill: var(--crema);
+  opacity: .95;
+}
+
+/* ── Estructura de seccions ── */
+.seccio {
+  position: relative;
+  padding: 5.5rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.contingut { max-width: var(--ample); width: 100%; }
+.seccio p { margin: 0 0 1.1rem; font-size: 1.02rem; }
+.seccio p:last-child { margin-bottom: 0; }
+
+/* ── Arc de mig punt (motiu de les invitacions) ── */
+.arc {
+  position: relative;
+  width: min(88vw, 500px);
+  border-radius: 999px 999px 24px 24px;
+  padding: 5.4rem 1.6rem 3rem;
+  margin: 0 auto;
+}
+.arc--linia { border: 2px solid var(--crema); }
+.arc .titol { font-size: clamp(1.35rem, 5.4vw, 2.05rem); }
+.arc p { font-size: .98rem; }
+
+/* Rajos de sol al voltant de l'arc: mateixa escala que l'arc,
+   radien del centre geomètric de la semicircumferència */
+.rajos {
+  position: absolute;
+  top: 0; left: -13%;
+  width: 126%;
+  aspect-ratio: 650 / 300;
+  height: auto;
+  transform: translateY(-40%);
+  pointer-events: none;
+}
+.rajos line { stroke: var(--crema); stroke-width: 3; stroke-linecap: round; }
+
+/* ── Cronologia del dia (com la invitació de Torre Sever) ── */
+.agenda { list-style: none; margin-top: 1rem; }
+.agenda li { padding: 0; }
+.agenda .hora {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 6vw, 2.7rem);
+  letter-spacing: .04em;
+  display: block;
+  line-height: 1.1;
+}
+.agenda .que { font-size: 1.05rem; display: block; }
+.agenda li + li::before {
+  content: '';
+  display: block;
+  width: 2px; height: 44px;
+  background: var(--crema);
+  margin: 1.1rem auto;
+  opacity: .9;
+}
+
+/* ── Botons ── */
+.boto {
+  display: inline-block;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: .95rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--magenta);
+  background: var(--crema);
+  border: none;
+  border-radius: 999px;
+  padding: .95rem 2.2rem;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.boto:hover, .boto:focus-visible { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,.22); }
+.boto:focus-visible { outline: 3px solid var(--crema); outline-offset: 3px; }
+.boto--buit {
+  background: transparent;
+  color: var(--crema);
+  border: 2px solid var(--crema);
+}
+
+/* ── Compte enrere ── */
+.compte {
+  display: flex;
+  justify-content: center;
+  gap: clamp(.8rem, 4vw, 2rem);
+  margin-top: 2rem;
+}
+.compte div { min-width: 62px; }
+.compte .num {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 6vw, 2.8rem);
+  line-height: 1;
+  display: block;
+}
+.compte .eti {
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  opacity: .9;
+}
+
+/* ── Fotos ── */
+.foto-marc {
+  width: min(78vw, 360px);
+  margin: 2.2rem auto 0;
+  border-radius: 999px 999px 18px 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0,0,0,.28);
+}
+.foto-marc img { width: 100%; display: block; }
+.tira {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 480px;
+  margin: 2.2rem auto 0;
+}
+.tira img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(var(--gir, 0deg));
+}
+.tira img:nth-child(1) { --gir: -1.6deg; }
+.tira img:nth-child(2) { --gir: 1.2deg; }
+.tira img:nth-child(3) { --gir: 1.8deg; }
+.tira img:nth-child(4) { --gir: -1.1deg; }
+
+/* ── Colors del vestuari ── */
+.paleta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .9rem;
+  margin: 1.6rem 0;
+}
+.mostra {
+  width: 54px; height: 54px;
+  border-radius: 50%;
+  border: 2px solid var(--crema);
+  position: relative;
+}
+.mostra--no::after {
+  content: '';
+  position: absolute; inset: -6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, transparent 46%, var(--crema) 46%, var(--crema) 54%, transparent 54%);
+}
+.paleta-eti { font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; opacity: .9; }
+
+/* ── Targetes d'informació (arribar / dormir) ── */
+.fitxes {
+  display: grid;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+.fitxa {
+  border: 1.5px solid rgba(249,244,222,.55);
+  border-radius: 18px;
+  padding: 1.4rem 1.5rem;
+  backdrop-filter: blur(2px);
+}
+.fitxa h3 { margin-bottom: .5rem; }
+.fitxa p { font-size: .95rem; margin-bottom: .4rem; }
+.mapa {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 0;
+  border-radius: 18px;
+  margin-top: 1.4rem;
+  filter: saturate(.9);
+}
+
+/* ── IBAN / regal ── */
+.iban {
+  font-family: 'Fragment Mono', monospace;
+  font-size: clamp(.85rem, 3vw, 1rem);
+  letter-spacing: .06em;
+  opacity: .85;
+  padding: .4rem 0;
+  margin: 1.1rem auto;
+  user-select: all;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.copia-iban-boto {
+  display: inline-block;
+  background: none;
+  border: none;
+  color: var(--crema);
+  opacity: .65;
+  font-family: var(--sans);
+  font-size: .78rem;
+  letter-spacing: .03em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  padding: .2rem .3rem;
+}
+.copia-iban-boto:hover, .copia-iban-boto:focus-visible { opacity: 1; }
+
+/* ── Marcador de pendent (placeholders) ── */
+.pendent {
+  background: rgba(249,244,222,.16);
+  border-radius: 6px;
+  padding: 0 .35em;
+  font-style: normal;
+}
+
+/* ── Peu ── */
+.peu {
+  padding: 3rem 1.4rem 6.5rem;
+  text-align: center;
+  font-size: 1.02rem;
+}
+.peu .mono {
+  width: 74px; height: 74px;
+  border-radius: 50%;
+  margin: 0 auto 1.2rem;
+  display: block;
+}
+.peu a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(249,244,222,.5); }
+.peu .linia {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1rem; margin-top: 1rem;
+  text-transform: lowercase; letter-spacing: .05em;
+}
+.insta-enllac {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: .5rem 1.1rem;
+  border: 1.5px solid var(--crema);
+  border-radius: 999px;
+  border-bottom: 1.5px solid var(--crema) !important;
+  transition: transform .18s ease, background .18s ease;
+}
+.insta-enllac:hover, .insta-enllac:focus-visible { transform: translateY(-2px); background: rgba(249,244,222,.1); }
+.insta-enllac svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+/* ── Lluna i estrelles (la festa / nit) ── */
+.lluna { width: 84px; margin: 0 auto 1.6rem; display: block; fill: var(--crema); }
+.cel-estrelles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.estrella {
+  position: absolute;
+  fill: var(--crema);
+  opacity: .8;
+  animation: parpelleig 3.4s ease-in-out infinite;
+}
+@keyframes parpelleig { 0%,100% { opacity: .25; } 50% { opacity: .95; } }
+
+/* ── Aparició en fer scroll ── */
+.revela { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+.revela.vist { opacity: 1; transform: none; }
+
+
+  /* Fotos dels supervisors: sempre cercles perfectes */
+  .gats-graella img {
+    width: 104px; height: 104px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--crema);
+  }
+
+  /* Contrasenya de la invitació */
+  .sobre-clau {
+    width: min(86vw, 310px);
+    background: rgba(0,0,0,.14);
+    border: 1.5px solid rgba(249,244,222,.55);
+    border-radius: 999px;
+    color: var(--crema);
+    font-family: var(--sans);
+    font-size: 1.05rem;
+    letter-spacing: .28em;
+    text-align: center;
+    text-transform: uppercase;
+    padding: .8rem 1rem;
+    outline: none;
+    caret-color: var(--crema);
+    transition: border-color .25s ease, opacity .5s ease, transform .5s ease;
+  }
+  .sobre-clau::placeholder {
+    color: rgba(249,244,222,.7);
+    font-size: .66rem;
+    letter-spacing: .01em;
+    text-transform: none;
+  }
+  .sobre-clau:focus { border-color: var(--crema); }
+  .sobre-clau.error { animation: sacseig .45s ease; border-color: #FF9B9B; }
+  .sobre-clau.correcta { opacity: 0; transform: scale(.92); pointer-events: none; }
+  body[data-clau-ok="1"] .sobre-segell { animation: batecSegell 1.4s ease-in-out infinite; }
+  @keyframes batecSegell {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.07); }
+  }
+  @keyframes sacseig {
+    0%,100% { transform: translateX(0); }
+    20% { transform: translateX(-9px); } 40% { transform: translateX(8px); }
+    60% { transform: translateX(-6px); } 80% { transform: translateX(4px); }
+  }
+
+  @supports not (aspect-ratio: 1 / 1) {
+    .sobre-cos { height: min(58vw, 330px); }
+  }
+
+  /* ── Escala tipogràfica pròpia per a mòbil: llegible i sense desbordar ── */
+  @media (max-width: 700px) {
+    .titol-nuvis { font-size: 8vw; gap: .55rem; }
+    h2.titol { font-size: clamp(1.75rem, 7.4vw, 2.5rem); }
+    h2.titol.titol-linia { font-size: 6.6vw; }
+    h3.titol { font-size: clamp(1.35rem, 5.8vw, 1.7rem); }
+    .agenda .hora { font-size: clamp(1.8rem, 7.5vw, 2.4rem); }
+    .sobre-clau { width: 86vw; max-width: 340px; }
+    .sobre-clau::placeholder { font-size: .66rem; letter-spacing: .03em; }
+  }
+</style>
+<style is:inline>
+  /* ── El cel que es pon: capa fixa que canvia amb l'scroll ── */
+  #cel { position: fixed; inset: 0; z-index: -2; background: var(--ambre); transition: background-color .25s linear; }
+  .seccio { background: transparent; }
+
+  /* ── El sol que baixa i la lluna que puja ── */
+  /* L'astre: sol de tarda que la nit va mossegant fins deixar la lluna */
+  #astre {
+    position: fixed; z-index: -1;
+    width: 96px; height: 96px;
+    right: 8%; top: 7vh;
+    pointer-events: none;
+  }
+  #astre::before {
+    content: '';
+    position: absolute; inset: -34%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(250,210,104,.55) 0%, rgba(247,169,35,0) 68%);
+    opacity: var(--resplendor, 1);
+    transition: opacity .4s linear;
+  }
+  #astre svg { width: 100%; height: 100%; overflow: visible; }
+
+  /* ── Navegació ── */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; justify-content: center; flex-wrap: wrap;
+    gap: 1.1rem; padding: .8rem 1rem;
+    font-size: .76rem; letter-spacing: .11em; text-transform: lowercase;
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); background: rgba(0,0,0,.10);
+  }
+  .nav a { color: var(--crema); text-decoration: none; opacity: .92; }
+  .nav a:hover, .nav a:focus-visible { opacity: 1; border-bottom: 1px solid var(--crema); }
+
+  .hero { min-height: 88vh; justify-content: center; padding-top: 7.5rem; }
+  .hero .dates {
+    display: flex; align-items: center; gap: 1rem; justify-content: center;
+    font-family: var(--serif);
+    font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+    letter-spacing: .1em; margin-top: 1.4rem;
+  }
+  .hero .dates .ratlla { flex: 0 1 120px; height: 1.5px; background: var(--crema); }
+
+  /* ── El sobre d'entrada ── */
+  #sobre {
+    position: fixed; inset: 0; z-index: 90;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 1.6rem;
+    background: radial-gradient(ellipse at 50% 42%, #5E6C34 0%, #4C5829 70%, #414C22 100%);
+    transition: opacity .8s ease .55s, visibility 0s linear 1.4s;
+  }
+  #sobre.obert { opacity: 0; visibility: hidden; pointer-events: none; }
+  .sobre-escena { perspective: 1100px; }
+  .sobre-cos {
+    position: relative;
+    width: min(86vw, 500px);
+    aspect-ratio: 100 / 68;
+    min-height: min(56vw, 330px);
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23p)' opacity='0.9'/%3E%3C/svg%3E"),
+      linear-gradient(155deg, #79874B 0%, #6E7B3F 45%, #5F6C36 100%);
+    background-blend-mode: overlay, normal;
+    border-radius: 12px;
+    box-shadow:
+      0 34px 80px rgba(0,0,0,.5),
+      0 6px 18px rgba(0,0,0,.3),
+      inset 0 1px 0 rgba(255,255,255,.14),
+      inset 0 -2px 6px rgba(0,0,0,.18);
+  }
+  /* plecs inferiors del sobre */
+  .sobre-cos::before, .sobre-cos::after {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: 12px;
+  }
+  .sobre-cos::before {
+    background: linear-gradient(100deg, #6C793C 0%, #616E35 100%);
+    clip-path: polygon(0 22%, 50% 78%, 0 100%);
+    box-shadow: inset -3px 0 5px rgba(0,0,0,.1);
+  }
+  .sobre-cos::after  {
+    background: linear-gradient(260deg, #6C793C 0%, #616E35 100%);
+    clip-path: polygon(100% 22%, 50% 78%, 100% 100%);
+  }
+  /* plec inferior central */
+  .sobre-plec {
+    position: absolute; inset: 0;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.1) 100%), #6A773B;
+    clip-path: polygon(0 100%, 50% 56%, 100% 100%);
+  }
+  .sobre-tapa {
+    position: absolute; inset: 0 0 auto 0;
+    height: 58%;
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23p)' opacity='0.85'/%3E%3C/svg%3E"),
+      linear-gradient(180deg, #829053 0%, #78864A 30%, #6D7A40 96%);
+    background-blend-mode: soft-light, normal;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    border-radius: 12px 12px 0 0;
+    transform-origin: top center;
+    transition: transform .9s cubic-bezier(.6, 0, .3, 1);
+    z-index: 2;
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,.22));
+  }
+  #sobre.obert .sobre-tapa { transform: rotateX(-178deg); z-index: 1; }
+  .sobre-segell {
+    position: absolute; left: 50%; top: 58%;
+    transform: translate(-50%, -50%);
+    width: clamp(96px, 26vw, 132px);
+    z-index: 3;
+    border: none; background: none; padding: 0;
+    cursor: pointer;
+    transition: transform .5s ease, opacity .45s ease;
+  }
+  .sobre-segell img { width: 100%; display: block; filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); }
+  .sobre-segell:hover { transform: translate(-50%,-50%) scale(1.05); }
+  .sobre-segell:focus-visible { outline: 3px solid var(--crema); outline-offset: 4px; border-radius: 50%; }
+  #sobre.obert .sobre-segell { opacity: 0; transform: translate(-50%,-50%) scale(.55) rotate(-16deg); }
+  .sobre-pista { color: var(--crema); font-size: .85rem; letter-spacing: .16em; text-transform: lowercase; }
+  body.tancat { overflow: hidden; }
+
+  /* ── Farolets de la invitació (línia crema, suren) ── */
+  .farolet {
+    position: absolute;
+    stroke: var(--crema); stroke-width: 2.5; fill: none; stroke-linecap: round;
+    opacity: .95;
+    animation: surar 5.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .farolet { z-index: 1; }
+  @keyframes surar { 0%,100% { transform: translateY(0) rotate(-1.5deg); } 50% { transform: translateY(-14px) rotate(1.5deg); } }
+
+  /* ── Cronologia de la història ── */
+  .historia { list-style: none; margin-top: 1rem; }
+  .historia .quan { font-family: var(--serif); font-size: clamp(1.3rem, 4.5vw, 1.8rem); letter-spacing: .05em; display: block; }
+  .historia .lloc { font-family: var(--serif); font-size: .95rem; letter-spacing: .2em; display: block; margin-top: .2rem; }
+  .historia .fet { font-size: .98rem; display: block; max-width: 420px; margin-inline: auto; margin-top: .15rem; }
+  .historia li + li::before {
+    content: ''; display: block;
+    width: 2px; height: 40px;
+    background: var(--crema); opacity: .9;
+    margin: 1.1rem auto;
+  }
+
+  
+
+  /* ── Formulari de confirmació ── */
+  .form-caixa {
+    border: 2.5px solid var(--crema);
+    background: rgba(249,244,222,.06);
+    border-radius: 22px;
+    padding: 2.6rem 1.8rem;
+    margin-top: 2rem;
+    text-align: left;
+    max-width: 520px;
+    margin-inline: auto;
+    box-shadow: 0 14px 40px rgba(0,0,0,.25);
+  }
+  .form-camp { margin-bottom: 1.3rem; }
+  .form-camp label {
+    display: block;
+    font-size: .78rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    opacity: .85;
+    margin-bottom: .4rem;
+  }
+  .form-camp input[type="text"],
+  .form-camp input[type="number"],
+  .form-camp select,
+  .form-camp textarea {
+    width: 100%;
+    font-family: var(--sans);
+    font-size: 1rem;
+    color: var(--crema);
+    background: rgba(249,244,222,.1);
+    border: 1.5px solid rgba(249,244,222,.5);
+    border-radius: 10px;
+    padding: .65rem .8rem;
+  }
+  .form-camp select { appearance: none; }
+  .form-camp select option { color: var(--nit); }
+  .form-camp input::placeholder, .form-camp textarea::placeholder { color: rgba(249,244,222,.55); }
+  .form-si-no { display: flex; gap: 1rem; }
+  .form-si-no button {
+    flex: 1;
+    font-family: var(--sans);
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    background: rgba(249,244,222,.1);
+    color: var(--crema);
+    border: 1.5px solid rgba(249,244,222,.5);
+    border-radius: 999px;
+    padding: .6rem 1rem;
+    cursor: pointer;
+    transition: background .2s ease, transform .15s ease;
+  }
+  .form-si-no button.triat { background: var(--crema); color: var(--magenta); }
+  .form-subcamp { display: none; margin-top: .8rem; }
+  .form-subcamp.visible { display: block; }
+  .form-enviar { margin-top: .6rem; width: 100%; }
+  .form-errors {
+    text-align: center;
+    font-size: .9rem;
+    color: var(--crema);
+    background: rgba(194,43,43,.35);
+    border: 1.5px solid rgba(249,244,222,.6);
+    border-radius: 10px;
+    padding: .7rem 1rem;
+    margin-bottom: 1rem;
+  }
+  .form-gracies {
+    text-align: center;
+    font-size: 1rem;
+    padding: 1rem 0;
+  }
+
+  /* ── Petjades que travessen la pantalla ── */
+  .petjada {
+    position: fixed; z-index: 40;
+    width: 26px; height: 26px;
+    fill: var(--crema);
+    opacity: 0;
+    pointer-events: none;
+    animation: petja 2.2s ease forwards;
+  }
+  @keyframes petja { 0% { opacity: 0; } 18% { opacity: .75; } 70% { opacity: .75; } 100% { opacity: 0; } }
+
+  /* ── Preloader amb el monograma ── */
+  #preload {
+    position: fixed; inset: 0; z-index: 95;
+    display: grid; place-items: center;
+    background: var(--nit);
+    transition: opacity .7s ease, visibility 0s linear .7s;
+  }
+  #preload img { width: 92px; height: 92px; border-radius: 50%; animation: batec 1.6s ease-in-out infinite; }
+  #preload.fet { opacity: 0; visibility: hidden; pointer-events: none; }
+  #preload { animation: preloadFallback .6s ease 4.2s forwards; }
+  @keyframes preloadFallback { to { opacity: 0; visibility: hidden; } }
+  @keyframes batec { 0%,100% { transform: scale(1); opacity: .85; } 50% { transform: scale(1.08); opacity: 1; } }
+
+  /* ── Confeti de destells en obrir el sobre ── */
+  .confeti {
+    position: fixed; z-index: 92;
+    width: 16px; height: 16px;
+    fill: var(--crema);
+    pointer-events: none;
+    animation: esclat 1.5s cubic-bezier(.2,.7,.4,1) forwards;
+  }
+  @keyframes esclat {
+    0%   { transform: translate(0,0) scale(.3) rotate(0deg); opacity: 0; }
+    12%  { opacity: 1; }
+    100% { transform: translate(var(--dx), var(--dy)) scale(1) rotate(var(--gir)); opacity: 0; }
+  }
+
+  /* ── Estrella fugaç al cel de la nit ── */
+  .fugac {
+    position: absolute;
+    width: 130px; height: 2px;
+    background: linear-gradient(90deg, var(--crema), transparent);
+    border-radius: 2px;
+    opacity: 0;
+    animation: fugir 1.5s ease-in forwards;
+    pointer-events: none;
+  }
+  @keyframes fugir {
+    0%   { transform: translate(0,0) rotate(26deg); opacity: 0; }
+    10%  { opacity: .95; }
+    100% { transform: translate(44vw, 24vh) rotate(26deg); opacity: 0; }
+  }
+
+  /* ── El dia de la boda ── */
+  .es-avui {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 8vw, 3.4rem);
+    letter-spacing: .08em;
+    margin-top: 2rem;
+  }
+  .agenda li.ara .hora { text-shadow: 0 0 18px rgba(249,244,222,.9); }
+  .agenda li.ara .que::after { content: ' ✦ ara'; font-size: .8em; letter-spacing: .12em; }
+
+  /* ── Núvis en una línia ── */
+  .titol-nuvis {
+    padding-inline: .35em;
+    display: flex; align-items: center; justify-content: center;
+    gap: clamp(.5rem, 3vw, 1.5rem);
+    white-space: nowrap;
+    font-size: clamp(1.9rem, 10vw, 4.1rem);
+  }
+  .destell-nom { width: clamp(13px, 2.6vw, 24px); height: auto; margin: 0; flex: none; }
+
+  /* ── Enllaços discrets amb hover ── */
+  .enllac {
+    color: var(--crema);
+    font-size: .85rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 3px;
+    display: inline-block;
+    transition: border-color .22s ease, transform .22s ease, opacity .22s ease;
+    opacity: .95;
+  }
+  .enllac:hover, .enllac:focus-visible { border-bottom-color: var(--crema); transform: translateY(-2px); opacity: 1; }
+
+  /* ── Inicials amples: aire abans de la lletra següent ── */
+  .titol .ini.ini-espai { margin-right: .12em; }
+  .titol .ini.ini-espai--mes { margin-right: .22em; margin-left: -.06em; }
+  .titol .ini.ini-g { margin-right: .08em; margin-left: -.05em; }
+
+  /* ── Postes de sol restants ── */
+  .postes { font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; margin-top: 1.1rem; opacity: .95; }
+
+  /* ── Farolets lliures (la il·lustració real de la invitació) ── */
+  .farolet-lliure {
+    position: fixed; top: 0; left: 0; z-index: 2;
+    pointer-events: none;
+    opacity: .96;
+    transition: opacity .7s ease;
+    will-change: transform;
+    z-index: 2;
+  }
+  .farolet-lliure.discret { opacity: 0; }
+  .farolet-lliure.ences { filter: drop-shadow(0 0 14px rgba(255,222,140,.9)) drop-shadow(0 0 30px rgba(255,200,90,.45)); }
+
+  /* ── Estrella fugaç amb cap brillant, cua i espurnes ── */
+  .fugac2 {
+    position: absolute;
+    offset-rotate: auto;
+    pointer-events: none;
+    animation: fugir2 var(--durada, 1.9s) cubic-bezier(.35, 0, .65, 1) forwards;
+  }
+  .fugac2 .cap {
+    position: relative;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffffff 0%, var(--crema) 55%, rgba(249,244,222,0) 78%);
+    box-shadow: 0 0 16px 5px rgba(249,244,222,.65);
+  }
+  .fugac2 .cap svg {
+    position: absolute; inset: -8px;
+    width: 25px; height: 25px;
+    fill: #fff;
+    animation: parpelleig .45s linear infinite;
+  }
+  .fugac2 .cua {
+    position: absolute; right: 100%; top: 50%;
+    transform: translateY(-50%);
+    height: 2.5px; width: var(--cua, 130px);
+    background: linear-gradient(270deg, rgba(255,255,255,.95), rgba(249,244,222,.5) 40%, rgba(249,244,222,0));
+    border-radius: 3px;
+    filter: blur(.4px);
+  }
+  .cel-estrelles .espurna {
+    position: absolute;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--crema);
+    animation: espurneig 1s ease-out forwards;
+  }
+  @keyframes fugir2 {
+    0% { offset-distance: 0%; opacity: 0; }
+    9% { opacity: 1; }
+    58% { opacity: 1; }
+    80% { opacity: 0; }
+    100% { offset-distance: 100%; opacity: 0; }
+  }
+  @keyframes espurneig {
+    0% { transform: translate(0,0) scale(1); opacity: .9; }
+    100% { transform: translate(var(--ex), var(--ey)) scale(.2); opacity: 0; }
+  }
+
+  .agenda-icona {
+    display: block;
+    width: 34px; height: 34px;
+    margin: 0 auto .4rem;
+    stroke: var(--crema); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round;
+    opacity: .95;
+  }
+  #cel::after { content: none; }
+  
+
+  /* ── Punts laterals de navegació (escriptori) ── */
+  .punts { display: none; }
+  @media (min-width: 1000px) {
+    .punts {
+      position: fixed; right: 26px; top: 50%;
+      transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 14px;
+      z-index: 55;
+    }
+    .punts a {
+      width: 11px; height: 11px;
+      border-radius: 50%;
+      border: 1.5px solid var(--crema);
+      background: transparent;
+      transition: background .25s ease, transform .25s ease;
+    }
+    .punts a:hover { transform: scale(1.35); }
+    .punts a.actiu { background: var(--crema); transform: scale(1.25); }
+  }
+
+  /* ── Lightbox de fotos ── */
+  .tira img, #galeria .foto-marc img { cursor: pointer; }
+  .llum-vel {
+    position: fixed; inset: 0; z-index: 80;
+    background: rgba(58,8,33,.95);
+    display: none;
+    align-items: center; justify-content: center;
+    padding: 2rem 1rem;
+  }
+  .llum-vel.obert { display: flex; }
+  .llum-vel { perspective: 800px; }
+  .llum-vel img {
+    transition: transform .18s ease-out;
+    max-width: min(92vw, 560px); max-height: 78vh;
+    border-radius: 12px;
+    box-shadow: 0 24px 70px rgba(0,0,0,.5);
+  }
+  .llum-fletxa {
+    position: absolute; top: 50%;
+    transform: translateY(-50%);
+    background: none; border: none;
+    color: var(--crema);
+    font-size: 2.6rem; font-family: var(--serif);
+    cursor: pointer;
+    padding: 1rem;
+    opacity: .85;
+  }
+  .llum-fletxa:hover { opacity: 1; }
+  .llum-fletxa--esq { left: 2px; }
+  .llum-fletxa--dre { right: 2px; }
+  .llum-tancar {
+    position: absolute; top: 14px; right: 20px;
+    background: none; border: none;
+    color: var(--crema);
+    font-size: 1rem; letter-spacing: .1em; text-transform: uppercase;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(249,244,222,.5);
+  }
+
+
+  /* ── Menú hamburguesa mòbil amb monograma ── */
+  #menu-boto { display: none; }
+  @media (max-width: 860px) {
+    .nav { display: none; }
+    #menu-boto {
+      display: block;
+      position: fixed; top: 14px; right: 14px; z-index: 62;
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      border: 2px solid var(--crema);
+      padding: 0; background: none;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,.28);
+    }
+    #menu-boto img { width: 100%; height: 100%; border-radius: 50%; display: block; }
+  }
+  .menu-vel {
+    position: fixed; inset: 0; z-index: 61;
+    background: rgba(58,8,33,.96);
+    display: none;
+    align-items: center; justify-content: center;
+  }
+  .menu-vel.obert { display: flex; }
+  .menu-vel ul { list-style: none; text-align: center; }
+  .menu-vel a {
+    display: block;
+    color: var(--crema);
+    text-decoration: none;
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 6.5vw, 2.1rem);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: .55rem 0;
+  }
+  .menu-vel a:hover { text-decoration: underline; }
+
+
+  /* ── Barra de progrés de la posta ── */
+  #progres {
+    position: fixed; top: 0; left: 0;
+    height: 3px; width: 0;
+    z-index: 56;
+    background: var(--crema);
+    box-shadow: 0 0 8px rgba(0,0,0,.25);
+    transition: background-color .25s linear;
+    pointer-events: none;
+  }
+
+  /* ── Constel·lacions dels gats ── */
+  .constel-graella {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4.4rem 1.4rem;
+    max-width: 560px;
+    margin: 3rem auto 0;
+    justify-items: center;
+  }
+  @media (min-width: 700px) { .constel-graella { grid-template-columns: repeat(4, 1fr); } }
+  .constellacio-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: clamp(120px, 34vw, 150px);
+  }
+  .constellacio {
+    position: relative;
+    width: clamp(120px, 34vw, 150px);
+    overflow: visible;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+  .constellacio-foto {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--crema);
+    box-shadow: 0 8px 24px rgba(0,0,0,.4);
+    opacity: 0;
+    transform: scale(.8);
+    cursor: zoom-in;
+    pointer-events: none;
+    transition: opacity .3s ease, transform .3s ease;
+    z-index: 2;
+  }
+  .constellacio-item:hover .constellacio-foto,
+  .constellacio-item.actiu .constellacio-foto {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+  .constellacio circle { fill: var(--crema); opacity: .85; }
+  .constellacio polyline {
+    fill: none;
+    stroke: var(--crema); stroke-width: 1.2;
+    opacity: 0;
+    stroke-dasharray: 340; stroke-dashoffset: 340;
+    transition: opacity .4s ease;
+  }
+  .constellacio text {
+    fill: var(--crema);
+    font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity .5s ease .5s;
+  }
+  .constellacio:hover polyline, .constellacio.unida polyline {
+    opacity: .9;
+    animation: unirEstrelles 1.4s ease forwards;
+  }
+  .constellacio:hover text, .constellacio.unida text { opacity: .95; }
+  @keyframes unirEstrelles { to { stroke-dashoffset: 0; } }
+
+  .escena-galeria { width: 100%; max-width: 460px; margin: 1.8rem auto 0; display: block; filter: drop-shadow(0 18px 44px rgba(0,0,0,.32)); }
+
+  .dormir-opcions { display: flex; gap: 2.4rem; justify-content: center; margin-top: 1.2rem; }
+  .dormir-opcions .enllac { background: none; border-top: none; border-left: none; border-right: none; cursor: pointer; }
+  .dormir-opcions .enllac.triat { border-bottom: 1.5px solid var(--crema); opacity: 1; }
+
+  .fes-scroll {
+    position: fixed; bottom: 22px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 45;
+    color: var(--crema);
+    font-size: .78rem; letter-spacing: .2em; text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .8s ease;
+    pointer-events: none;
+  }
+  .fes-scroll.visible { opacity: .92; }
+  .fletxa-avall {
+    display: block;
+    width: 10px; height: 10px;
+    margin: 8px auto 0;
+    border-right: 2px solid var(--crema);
+    border-bottom: 2px solid var(--crema);
+    transform: rotate(45deg);
+    animation: picadeta 1.6s ease-in-out infinite;
+  }
+  @keyframes picadeta { 0%,100% { transform: rotate(45deg) translate(0,0); } 50% { transform: rotate(45deg) translate(4px,4px); } }
+
+  @media print {
+    #cel, #astre, #progres, #sobre, #preload, .nav, .punts, #menu-boto, .menu-vel,
+    .farolet-lliure, .llum-vel, .fes-scroll, .cel-estrelles,
+    .tira, .mapa, .escena-galeria, .constel-bloc, iframe, .rajos, button { display: none !important; }
+    body { background: #fff !important; color: #3a0821 !important; }
+    .seccio { padding: 1.2rem 0; page-break-inside: avoid; }
+    .titol, .agenda .hora, .historia .quan { color: #a4144f !important; }
+    .enllac, .peu a { color: #3a0821 !important; border: none; }
+    .pendent { background: none; border: 1px dashed #a4144f; }
+    .mostra { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  }
+
+  .transicio-destell {
+    position: fixed;
+    z-index: 3;
+    width: 30px; height: 30px;
+    fill: var(--crema);
+    pointer-events: none;
+    animation: brillar 1s ease forwards;
+  }
+  @keyframes brillar {
+    0% { transform: scale(.2) rotate(0deg); opacity: 0; }
+    35% { opacity: .95; }
+    100% { transform: scale(1.4) rotate(40deg); opacity: 0; }
+  }
+
+  h2.titol.titol-linia {
+    white-space: nowrap;
+    font-size: clamp(1.45rem, 7vw, 2.1rem);
+    display: block;
+    text-align: center;
+    margin-inline: auto;
+    max-width: 100%;
+  }
+
+  .prem-pista {
+    display: block;
+    margin-top: .5rem;
+    font-size: .68rem; letter-spacing: .18em; text-transform: lowercase;
+    opacity: .6;
+  }
+</style>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#A4144F">
+</head>
+<body class="tancat">
+<noscript>
+  <div style="position:fixed;inset:0;z-index:999;background:#3A0821;color:#F9F4DE;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;font-family:sans-serif;">
+    <p>Aquesta web necessita un navegador de veritat.<br>Obre el fitxer amb Safari o Chrome — la vista prèvia de Fitxers no executa la web.</p>
+  </div>
+</noscript>
+<noscript>
+  <style is:inline>
+    #sobre, #preload { display: none !important; }
+    body.tancat { overflow: auto !important; }
+    .revela { opacity: 1 !important; transform: none !important; }
+  </style>
+</noscript>
+
+<!-- ══════════ PRELOADER ══════════ -->
+<div id="preload" aria-hidden="true"><img src="/assets/img/a1af818a8ee.png" alt=""></div>
+
+<!-- ══════════ EL SOBRE ══════════ -->
+<div id="sobre" role="dialog" aria-label="Invitació: toqueu el segell per obrir">
+  <div class="sobre-escena">
+    <div class="sobre-cos">
+      <div class="sobre-plec"></div>
+      <div class="sobre-tapa"></div>
+      <button class="sobre-segell" id="segell" type="button" aria-label="Obrir la invitació">
+        <img src="/assets/img/a047805bca1.png" alt="">
+      </button>
+    </div>
+  </div>
+  <input type="text" id="clau" class="sobre-clau" autocomplete="off" autocapitalize="characters" spellcheck="false" inputmode="text" placeholder="Introdueix la teva contrasenya de convidat" aria-label="Contrasenya de la invitació">
+  <p class="sobre-pista" id="sobre-pista" hidden>✦ toqueu el segell per obrir ✦</p>
+</div>
+
+<div id="cel" aria-hidden="true"></div>
+<div id="progres" aria-hidden="true"></div>
+<div id="astre" aria-hidden="true">
+  <svg viewBox="0 0 100 100">
+    <defs><mask id="mAstre"><rect x="-40" y="-40" width="180" height="180" fill="white"/><circle id="mossec" cx="185" cy="40" r="36" fill="black"/></mask></defs>
+    <circle id="disc" cx="50" cy="50" r="34" mask="url(#mAstre)"/>
+  </svg>
+</div>
+
+<div class="fes-scroll" id="fes-scroll" aria-hidden="true">✦ fes scroll<span class="fletxa-avall"></span></div>
+
+<nav class="punts" id="punts" aria-label="Progrés de la posta"></nav>
+
+<nav class="nav" aria-label="Seccions">
+  <a href="#historia">la història</a>
+  <a href="#gran-dia">el gran dia</a>
+  <a href="#arribar">com arribar-hi</a>
+  <a href="#dormir">on dormir</a>
+  <a href="#colors">els colors</a>
+  <a href="#confirmar">confirmeu</a>
+  <a href="#regal">el regal</a>
+  <a href="#galeria">la galeria</a>
+</nav>
+
+<!-- ══════════ PORTADA · el sol encara és alt ══════════ -->
+<header class="seccio hero" data-sky="#F7A923">
+  <div class="contingut revela">
+    <h1 class="titol titol-nuvis titol-ajusta"><span><span class="ini">M</span>ARTA</span><svg class="destell destell-nom" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 0C14.2 8.8 17.2 11.8 26 13c-8.8 1.2-11.8 4.2-13 13-1.2-8.8-4.2-11.8-13-13C8.8 11.8 11.8 8.8 13 0Z"/></svg><span><span class="ini ini-g">G</span>UILLE</span></h1>
+    <div class="dates" aria-label="2 de juliol de 2027">
+      <span>02</span><span class="ratlla"></span><span>JULIOL</span><span class="ratlla"></span><span>27</span>
+    </div>
+
+
+
+    <div class="tira">
+        <img src="/assets/img/aae8d6669e0.webp" alt="Marta i Guille al fotomaton (esquerra)">
+        <img src="/assets/img/a308daaf3fc.webp" alt="Marta i Guille al fotomaton (dreta)">
+      </div>
+
+    <div class="compte" id="compte" style="margin-top:3.2rem;" aria-label="Compte enrere">
+      <div><span class="num" id="c-dies">—</span><span class="eti">dies</span></div>
+      <div><span class="num" id="c-hores">—</span><span class="eti">hores</span></div>
+      <div><span class="num" id="c-mins">—</span><span class="eti">minuts</span></div>
+      <div><span class="num" id="c-segs">—</span><span class="eti">segons</span></div>
+    </div>
+
+    <p class="postes">queden <span id="c-postes">—</span> postes de sol</p>
+    <p style="margin-top:1.2rem;"><a class="enllac" id="ics" href="#" download="boda-marta-guille.ics">✦ Guarda la data ✦</a></p>
+  </div>
+</header>
+
+<!-- ══════════ LA NOSTRA HISTÒRIA ══════════ -->
+<section class="seccio" id="historia" data-sky="#E3900E">
+  <div class="contingut revela">
+    <h2 class="titol titol-linia titol-ajusta"><span class="ini">L</span>A <span class="ini ini-espai">N</span>OSTRA <span class="ini ini-espai--mes">H</span>ISTÒRIA</h2>
+    <svg class="destell" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 0C14.2 8.8 17.2 11.8 26 13c-8.8 1.2-11.8 4.2-13 13-1.2-8.8-4.2-11.8-13-13C8.8 11.8 11.8 8.8 13 0Z"/></svg>
+    <p>La nostra història està marcada per les postes de sol:</p>
+    <p>Ens encantaria que vingueu a celebrar amb nosaltres la més especial de totes.</p>
+    <ul class="historia">
+      <li><span class="quan">24·11·24</span><span class="lloc">PLAÇA LESSEPS</span><span class="fet">La primera posta de sol que vam veure junts.</span></li>
+      <li><span class="quan">05·05·25</span><span class="lloc">MOLLET DEL VALLÈS</span><span class="fet">El primer sol que es va pondre sobre casa nostra.</span></li>
+      <li><span class="quan">24·11·25</span><span class="lloc">CAT BA, VIETNAM</span><span class="fet">Un any exacte després de la primera: ens vam prometre.</span></li>
+      <li><span class="quan">02·07·27</span><span class="lloc">TORRE SEVER</span><span class="fet">La més especial de totes.</span></li>
+    </ul>
+
+    <svg class="destell" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 0C14.2 8.8 17.2 11.8 26 13c-8.8 1.2-11.8 4.2-13 13-1.2-8.8-4.2-11.8-13-13C8.8 11.8 11.8 8.8 13 0Z"/></svg>
+    <p style="font-style: italic;">Vaig saber que erets estiu a dins l'hivern<br>-i crec-<br>que el secret és que no hi ha secret.</p>
+    <p style="font-size:.85rem; opacity:.85;">Inevitable · Oques Grasses</p>
+    
+  </div>
+</section>
+
+<!-- ══════════ EL GRAN DIA · comença la posta ══════════ -->
+<section class="seccio" id="gran-dia" data-sky="#DA5A13" style="padding-top: 8rem;">
+  <div class="contingut revela">
+    <div class="arc" style="position:relative; margin-bottom: 1.6rem;">
+      <svg class="rajos" viewBox="0 0 650 300" aria-hidden="true">
+        <line x1="325" y1="108" x2="325" y2="60"/>
+        <line x1="391" y1="112" x2="398" y2="87"/><line x1="259" y1="112" x2="252" y2="87"/>
+        <line x1="452" y1="140" x2="474" y2="97"/><line x1="198" y1="140" x2="176" y2="97"/>
+        <line x1="508" y1="174" x2="526" y2="155"/><line x1="142" y1="174" x2="124" y2="155"/>
+        <line x1="549" y1="227" x2="589" y2="200"/><line x1="101" y1="227" x2="61" y2="200"/>
+        <line x1="582" y1="284" x2="607" y2="275"/><line x1="68" y1="284" x2="43" y2="275"/>
+      </svg>
+      <h2 class="titol"><span class="ini">E</span>L <span class="ini">G</span>RAN <span class="ini">D</span>IA</h2>
+      <svg class="destell" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 0C14.2 8.8 17.2 11.8 26 13c-8.8 1.2-11.8 4.2-13 13-1.2-8.8-4.2-11.8-13-13C8.8 11.8 11.8 8.8 13 0Z"/></svg>
+    </div>
+
+    <h3 class="titol" id="agenda"><span class="ini">T</span>ORRE <span class="ini">S</span>EVER</h3>
+    <p style="margin-top:.4rem;">Caldes de Montbui</p>
+    <svg class="destell" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 0C14.2 8.8 17.2 11.8 26 13c-8.8 1.2-11.8 4.2-13 13-1.2-8.8-4.2-11.8-13-13C8.8 11.8 11.8 8.8 13 0Z"/></svg>
+    <ul class="agenda">
+      <li><svg class="agenda-icona" viewBox="0 0 40 40" aria-hidden="true"><path d="M12 5h16l-6.5 13v10M15 34h10M20 18v10"/><path d="M14 9c3 3 9 3 12 0"/></svg><span class="hora">18:00</span><span class="que">la benvinguda</span></li>
+      <li><svg class="agenda-icona" viewBox="0 0 40 40" aria-hidden="true"><circle cx="15" cy="24" r="9"/><circle cx="25" cy="24" r="9"/><path d="M25 15l3-6h-6z"/></svg><span class="hora">18:18</span><span class="que">el sí, vull</span></li>
+      <li><svg class="agenda-icona" viewBox="0 0 40 40" aria-hidden="true"><path d="M12 5v10M8 5v7c0 2 1.5 3 4 3s4-1 4-3V5M12 15v20"/><path d="M28 5c-3 0-4 6-4 11 0 3 1.5 4 4 4v15M28 5v30"/></svg><span class="hora">19:19</span><span class="que">la comilona</span></li>
+      <li><svg class="agenda-icona" viewBox="0 0 40 40" aria-hidden="true"><line x1="20" y1="2" x2="20" y2="9"/><circle cx="20" cy="22" r="13"/><path d="M7.5 18 h25 M7.5 26 h25 M20 9 v26 M13 10.8 c-3 7 -3 15.4 0 22.4 M27 10.8 c3 7 3 15.4 0 22.4"/><path d="M35 6 l1 2.6 2.6 1 -2.6 1 -1 2.6 -1 -2.6 -2.6 -1 2.6 -1z" fill="#F9F4DE" stroke="none"/></svg><span class="hora">00:00</span><span class="que">la festa</span></li>
+    </ul>
+    <svg class="destell" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 0C14.2 8.8 17.2 11.8 26 13c-8.8 1.2-11.8 4.2-13 13-1.2-8.8-4.2-11.8-13-13C8.8 11.8 11.8 8.8 13 0Z"/></svg>
+    <p style="font-size:.92rem; max-width:480px; margin-inline:auto;">Ens agradaria que tots i totes pogueu disfrutar del dia al 100%.</p>
+    <p style="font-size:.92rem; max-width:480px; margin-inline:auto;">És per això que, en la mesura possible, agraïrem si deixeu als vostres petits al cuidat d'algú.</p>
+  </div>
+</section>
+
+
+
+<!-- ══════════ COM ARRIBAR-HI ══════════ -->
+<section class="seccio" id="arribar" data-sky="#A4144F">
+  <div class="contingut revela">
+    <h2 class="titol"><span class="ini">C</span>OM <span class="ini">A</span>RRIBAR-HI</h2>
+    <iframe class="mapa" title="Mapa de Torre Sever, Caldes de Montbui" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Torre%20Sever%2C%20Caldes%20de%20Montbui&z=13&output=embed"></iframe>
+    <p style="margin-top:1rem;"><a class="enllac" href="https://maps.google.com/?q=Torre+Sever,+Caldes+de+Montbui" target="_blank" rel="noopener">✦ Obre'l a Google Maps ✦</a></p>
+    <div class="fitxes">
+      <div class="fitxa">
+        <h3 class="titol"><span class="ini">E</span>N COTXE</h3>
+        <p>Torre Sever · Ctra. C-59, km 16 · Caldes de Montbui.</p>
+        <p>Hi ha aparcament a la mateixa finca.</p>
+      </div>
+      <div class="fitxa">
+        <h3 class="titol"><span class="ini">E</span>N TRANSPORT PÚBLIC</h3>
+        <p>Des de Barcelona, bus E9 fins a Els Saulons (uns 45 minuts).</p>
+      </div>
+      <div class="fitxa">
+        <h3 class="titol"><span class="ini">E</span>N AUTOCAR</h3>
+        <p>Ho estem mirant! Properament us donarem més detalls.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ON DORMIR ══════════ -->
+<section class="seccio" id="dormir" data-sky="#97123F">
+  <div class="contingut revela">
+    <h2 class="titol"><span class="ini">O</span>N DORMIR</h2>
+    <svg class="destell" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 0C14.2 8.8 17.2 11.8 26 13c-8.8 1.2-11.8 4.2-13 13-1.2-8.8-4.2-11.8-13-13C8.8 11.8 11.8 8.8 13 0Z"/></svg>
+    <p>A la finca no s'hi pot dormir, però estem mirant les opcions que hi ha pels voltants.</p>
+    <p>També estem mirant de seguir la festa l'endemà amb qui li vingui de gust.</p>
+    <p style="margin-top:1.2rem;"><a class="enllac" href="#confirmar">✦ respon més endavant al formulari ✦</a></p>
+  </div>
+</section>
+
+<!-- ══════════ ELS COLORS ══════════ -->
+<section class="seccio" id="colors" data-sky="#8A0F3D">
+  <div class="contingut revela">
+    <h2 class="titol"><span class="ini">E</span>LS <span class="ini">C</span>OLORS</h2>
+    <svg class="destell" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 0C14.2 8.8 17.2 11.8 26 13c-8.8 1.2-11.8 4.2-13 13-1.2-8.8-4.2-11.8-13-13C8.8 11.8 11.8 8.8 13 0Z"/></svg>
+    <p>Volem que sigui un dia ple de color!</p>
+    <p>Porteu vestits amb tons alegres i llisos.</p>
+    <p>Eviteu els estampats i els tons pastel.</p>
+
+    <p class="paleta-eti" style="margin-top:2rem;">✦ ESCULL EL QUE VULGUIS! ✦</p>
+    <div class="paleta" aria-label="Colors benvinguts">
+      <span class="mostra" style="background:#F7A923" title="ambre"></span>
+      <span class="mostra" style="background:#DA5A13" title="taronja"></span>
+      <span class="mostra" style="background:#C22B2B" title="granat"></span>
+      <span class="mostra" style="background:#D94A8C" title="rosa"></span>
+      <span class="mostra" style="background:#A4144F" title="magenta"></span>
+      <span class="mostra" style="background:#B14FA6" title="lila"></span>
+      <span class="mostra" style="background:#697526" title="verd oliva"></span>
+    </div>
+
+    <p class="paleta-eti">✦ aquests, deixeu-los a l'armari ✦</p>
+    <div class="paleta" aria-label="Colors a evitar: blanc, negre, blau, gris i marró">
+      <span class="mostra mostra--no" style="background:#FFFFFF" title="blanc"></span>
+      <span class="mostra mostra--no" style="background:#111111" title="negre"></span>
+      <span class="mostra mostra--no" style="background:#28c5c9" title="blau"></span>
+      <span class="mostra mostra--no" style="background:#8A8A8A" title="gris"></span>
+      <span class="mostra mostra--no" style="background:#724908" title="marró"></span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ CONFIRMEU ══════════ -->
+<section class="seccio" id="confirmar" data-sky="#7E0F3C">
+  <div class="contingut revela">
+    <h2 class="titol"><span class="ini">V</span>INDRÀS?</h2>
+    <svg class="destell" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 0C14.2 8.8 17.2 11.8 26 13c-8.8 1.2-11.8 4.2-13 13-1.2-8.8-4.2-11.8-13-13C8.8 11.8 11.8 8.8 13 0Z"/></svg>
+    <p>Confirma'ns-ho abans del <strong>31 de desembre de 2026</strong>.</p>
+    <p style="font-size:.92rem; opacity:.9;">Diga'ns si vindràs, si tens alguna al·lèrgia o intolerància, i si necessites autocar.</p>
+    <form class="form-caixa" id="form-rsvp">
+      <div class="form-camp">
+        <label for="rsvp-nom">Nom *</label>
+        <input type="text" id="rsvp-nom" name="nom" placeholder="El teu nom" required>
+      </div>
+      <div class="form-camp">
+        <label for="rsvp-cognoms">Cognoms *</label>
+        <input type="text" id="rsvp-cognoms" name="cognoms" placeholder="Els teus cognoms" required>
+      </div>
+
+      <div class="form-camp">
+        <label for="rsvp-contacte">Telèfon o correu de contacte *</label>
+        <input type="text" id="rsvp-contacte" name="contacte" placeholder="Per poder-te localitzar si ens cal" required>
+      </div>
+
+      <div class="form-camp">
+        <label>Vindràs? *</label>
+        <div class="form-si-no" id="rsvp-vindras">
+          <button type="button" data-valor="si">Sí, hi seré</button>
+          <button type="button" data-valor="no">No podré venir</button>
+        </div>
+      </div>
+
+      <div id="rsvp-bloc-detalls" class="form-subcamp">
+        <div class="form-camp">
+          <label for="rsvp-menu">Tipus de menú</label>
+          <select id="rsvp-menu" name="menu">
+            <option value="estandard">Estàndard</option>
+            <option value="vegetaria">Vegetarià</option>
+            <option value="vegana">Vegà</option>
+            <option value="sense-gluten">Sense gluten</option>
+            <option value="altres">Altres (ho indico a sota)</option>
+          </select>
+        </div>
+
+        <div class="form-camp">
+          <label for="rsvp-allergies">Al·lèrgies o intoleràncies</label>
+          <textarea id="rsvp-allergies" name="allergies" rows="2" placeholder="Digue'ns-ho amb detall, si us plau"></textarea>
+        </div>
+
+        <div class="form-camp">
+          <label>Véns amb acompanyant?</label>
+          <div class="form-si-no" id="rsvp-acompanyant">
+            <button type="button" data-valor="si">Sí</button>
+            <button type="button" data-valor="no">No</button>
+          </div>
+          <div class="form-subcamp" id="rsvp-acompanyant-detall">
+            <div class="form-camp">
+              <label for="rsvp-acompanyant-nom">Nom de l'acompanyant</label>
+              <input type="text" id="rsvp-acompanyant-nom" name="acompanyant_nom" placeholder="Nom">
+            </div>
+            <div class="form-camp">
+              <label for="rsvp-acompanyant-cognoms">Cognoms de l'acompanyant</label>
+              <input type="text" id="rsvp-acompanyant-cognoms" name="acompanyant_cognoms" placeholder="Cognoms">
+            </div>
+            <div class="form-camp">
+              <label for="rsvp-acompanyant-menu">Tipus de menú de l'acompanyant</label>
+              <select id="rsvp-acompanyant-menu" name="acompanyant_menu">
+                <option value="estandard">Estàndard</option>
+                <option value="vegetaria">Vegetarià</option>
+                <option value="vegana">Vegà</option>
+                <option value="sense-gluten">Sense gluten</option>
+                <option value="altres">Altres (ho indico a sota)</option>
+              </select>
+            </div>
+            <div class="form-camp">
+              <label for="rsvp-acompanyant-allergies">Al·lèrgies o intoleràncies de l'acompanyant</label>
+              <textarea id="rsvp-acompanyant-allergies" name="acompanyant_allergies" rows="2" placeholder="Digue'ns-ho amb detall, si us plau"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-camp">
+          <label>Véns amb nens o nenes?</label>
+          <div class="form-si-no" id="rsvp-nens">
+            <button type="button" data-valor="si">Sí</button>
+            <button type="button" data-valor="no">No</button>
+          </div>
+          <div class="form-subcamp" id="rsvp-nens-detall">
+            <input type="text" placeholder="Quants i quines edats?" name="nens_detall">
+          </div>
+        </div>
+
+        <div class="form-camp">
+          <label>Necessites autocar?</label>
+          <div class="form-si-no" id="rsvp-autocar">
+            <button type="button" data-valor="si">Sí</button>
+            <button type="button" data-valor="no">No</button>
+          </div>
+          <div class="form-subcamp" id="rsvp-autocar-detall">
+            <div class="form-camp">
+              <label for="rsvp-autocar-quan">Quan el necessites?</label>
+              <select id="rsvp-autocar-quan" name="autocar_quan">
+                <option value="anada-i-tornada">D'anada i de tornada</option>
+                <option value="nomes-anada">Només d'anada</option>
+                <option value="nomes-tornada">Només de tornada</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-camp">
+          <label>Et quedaries a dormir per la zona?</label>
+          <div class="form-si-no" id="rsvp-dormir">
+            <button type="button" data-valor="si">Sí</button>
+            <button type="button" data-valor="no">No</button>
+          </div>
+        </div>
+
+        <div class="form-camp">
+          <label for="rsvp-canco">Una cançó que no pugui faltar a la festa ✦</label>
+          <input type="text" id="rsvp-canco" name="canco" placeholder="Títol i artista">
+        </div>
+
+        <div class="form-camp">
+          <label for="rsvp-especial">Necessites alguna cosa especial? (mobilitat reduïda, cadireta per a nadó, etc.)</label>
+          <textarea id="rsvp-especial" name="especial" rows="2" placeholder="Explica'ns-ho i ho tindrem en compte"></textarea>
+        </div>
+      </div>
+
+      <p class="form-errors" id="rsvp-errors" hidden></p>
+      <button class="boto form-enviar" type="submit">Enviar confirmació</button>
+      <p class="form-gracies" id="rsvp-gracies" hidden></p>
+    </form>
+  </div>
+</section>
+
+<!-- ══════════ EL REGAL · cau la nit ══════════ -->
+<section class="seccio" id="regal" data-sky="#3A0821">
+  <div class="contingut revela">
+    <h2 class="titol"><span class="ini">A</span>JUDA'NS AMB EL <span class="ini">V</span>IATGE DE <span class="ini">N</span>OCES</h2>
+    <svg class="destell" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 0C14.2 8.8 17.2 11.8 26 13c-8.8 1.2-11.8 4.2-13 13-1.2-8.8-4.2-11.8-13-13C8.8 11.8 11.8 8.8 13 0Z"/></svg>
+    <p>El millor regal és que vinguis a celebrar-ho amb nosaltres.</p>
+    <p>Però si vols posar-hi una mica més: fa anys que tots dos somiem amb un gran viatge que passi pel Japó — un d'aquells llargs, sense presses, de perdre'ns una mica. Encara no hem tingut l'oportunitat, i no se'ns acut millor ocasió per fer-lo que aquesta.</p>
+    <p>Ens ajudes a fer-lo realitat?</p>
+    <p style="font-weight:600;">Ens ajudareu encara més si ho feu en efectiu!</p>
+    <div class="iban" id="iban">ES42 1583 0001 1491 3660 4796</div>
+    <button class="copia-iban-boto" id="copiar-iban" type="button">Copiar l'IBAN</button>
+  </div>
+</section>
+
+<!-- ══════════ LA GALERIA · properament ══════════ -->
+<section class="seccio" id="galeria" data-sky="#3A0821">
+  <div class="contingut revela">
+    <h2 class="titol"><span class="ini">L</span>A <span class="ini">G</span>ALERIA</h2>
+    <svg class="destell" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 0C14.2 8.8 17.2 11.8 26 13c-8.8 1.2-11.8 4.2-13 13-1.2-8.8-4.2-11.8-13-13C8.8 11.8 11.8 8.8 13 0Z"/></svg>
+    <p>Properament: després del gran dia, aquí hi trobareu totes les fotos.</p>
+    <p style="font-size:.9rem; opacity:.85;">Mentrestant, imagineu-vos-hi:</p>
+    <svg class="escena-galeria" viewBox="0 0 700 500" role="img" aria-label="Il·lustració: taula de casament a l'aire lliure sota la posta de sol, amb farolets encesos penjant">
+      <defs>
+        <linearGradient id="gCel" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#F7A923"/><stop offset=".42" stop-color="#DA5A13"/>
+          <stop offset=".78" stop-color="#A4144F"/><stop offset="1" stop-color="#7E0F3C"/>
+        </linearGradient>
+        <radialGradient id="gSol"><stop offset="0" stop-color="#FDF0C8"/><stop offset=".55" stop-color="#FAD268"/><stop offset="1" stop-color="rgba(250,210,104,0)"/></radialGradient>
+        <radialGradient id="gLlum"><stop offset="0" stop-color="rgba(255,236,170,.95)"/><stop offset="1" stop-color="rgba(255,236,170,0)"/></radialGradient>
+        <clipPath id="retallArc"><path d="M40 500 V240 A310 235 0 0 1 660 240 V500 Z"/></clipPath>
+      </defs>
+      <g clip-path="url(#retallArc)">
+        <rect width="700" height="500" fill="url(#gCel)"/>
+        <!-- el sol ponent-se -->
+        <circle cx="350" cy="345" r="130" fill="url(#gSol)" opacity=".9"/>
+        <circle cx="350" cy="345" r="44" fill="#FDEBB4"/>
+        <!-- turons -->
+        <path d="M0 350 Q130 305 250 342 T480 336 T700 352 V500 H0 Z" fill="#7E0F3C" opacity=".5"/>
+        <path d="M0 374 Q170 336 340 368 T700 370 V500 H0 Z" fill="#560A29" opacity=".78"/>
+        <!-- garlandes de farolets -->
+        <path d="M52 128 Q 350 218 648 118" fill="none" stroke="#F9F4DE" stroke-width="2"/>
+        <path d="M96 62 Q 350 128 604 56" fill="none" stroke="#F9F4DE" stroke-width="1.6" opacity=".8"/>
+        <g stroke="#F9F4DE" stroke-width="1.8" fill="none">
+          <g><line x1="160" y1="160" x2="160" y2="182"/><circle cx="160" cy="200" r="26" fill="url(#gLlum)" stroke="none"/><ellipse cx="160" cy="200" rx="12" ry="14" fill="#FCE0A0"/><path d="M154 189 q-4 11 0 22 M166 189 q4 11 0 22"/></g>
+          <g><line x1="292" y1="192" x2="292" y2="212"/><circle cx="292" cy="230" r="24" fill="url(#gLlum)" stroke="none"/><ellipse cx="292" cy="230" rx="11" ry="13" fill="#FCE0A0"/><path d="M287 220 q-4 10 0 20 M297 220 q4 10 0 20"/></g>
+          <g><line x1="452" y1="188" x2="452" y2="206"/><circle cx="452" cy="223" r="24" fill="url(#gLlum)" stroke="none"/><ellipse cx="452" cy="223" rx="11" ry="13" fill="#FCE0A0"/><path d="M447 213 q-4 10 0 20 M457 213 q4 10 0 20"/></g>
+          <g><line x1="574" y1="146" x2="574" y2="166"/><circle cx="574" cy="183" r="25" fill="url(#gLlum)" stroke="none"/><ellipse cx="574" cy="183" rx="11" ry="13" fill="#FCE0A0"/><path d="M569 173 q-4 10 0 20 M579 173 q4 10 0 20"/></g>
+          <g><line x1="222" y1="98" x2="222" y2="112"/><circle cx="222" cy="126" r="19" fill="url(#gLlum)" stroke="none"/><ellipse cx="222" cy="126" rx="8.5" ry="10" fill="#FCE0A0"/></g>
+          <g><line x1="478" y1="94" x2="478" y2="108"/><circle cx="478" cy="122" r="19" fill="url(#gLlum)" stroke="none"/><ellipse cx="478" cy="122" rx="8.5" ry="10" fill="#FCE0A0"/></g>
+        </g>
+        <!-- cadires (respatllers rere la taula) -->
+        <g stroke="#F9F4DE" stroke-width="2.4" fill="none" opacity=".9">
+          <path d="M168 428 v-30 m 20 30 v-30 m-20 8 h20"/>
+          <path d="M258 428 v-30 m 20 30 v-30 m-20 8 h20"/>
+          <path d="M422 428 v-30 m 20 30 v-30 m-20 8 h20"/>
+          <path d="M512 428 v-30 m 20 30 v-30 m-20 8 h20"/>
+        </g>
+        <!-- la taula parada -->
+        <path d="M118 430 H582 L614 500 H86 Z" fill="#F9F4DE" opacity=".95"/>
+        <line x1="118" y1="448" x2="582" y2="448" stroke="#DA5A13" stroke-width="2" opacity=".4"/>
+        <g stroke="#A4144F" stroke-width="2" fill="none" opacity=".85">
+          <ellipse cx="196" cy="440" rx="17" ry="4.5"/>
+          <ellipse cx="350" cy="441" rx="17" ry="4.5"/>
+          <ellipse cx="504" cy="440" rx="17" ry="4.5"/>
+          <path d="M262 438 v-16 m-4.5 16 a4.5 3 0 0 0 9 0 M436 438 v-16 m-4.5 16 a4.5 3 0 0 0 9 0"/>
+        </g>
+        <!-- espelmes enceses -->
+        <g>
+          <circle cx="304" cy="416" r="12" fill="url(#gLlum)"/><rect x="300" y="420" width="8" height="18" rx="2" fill="#F9F4DE"/><ellipse cx="304" cy="416" rx="2.6" ry="4.5" fill="#FAD268"/>
+          <circle cx="396" cy="418" r="10" fill="url(#gLlum)"/><rect x="392.5" y="422" width="7" height="15" rx="2" fill="#F9F4DE"/><ellipse cx="396" cy="418" rx="2.3" ry="4" fill="#FAD268"/>
+        </g>
+        <!-- flors de taula -->
+        <g fill="#A4144F" opacity=".8">
+          <circle cx="232" cy="447" r="3.4"/><circle cx="243" cy="450" r="2.6"/><circle cx="458" cy="449" r="3.4"/><circle cx="469" cy="446" r="2.6"/><circle cx="350" cy="452" r="2.8"/>
+        </g>
+        <g fill="#6E7B3F"><circle cx="238" cy="452" r="2.2"/><circle cx="464" cy="453" r="2.2"/></g>
+        <!-- espurnes al cel -->
+        <g fill="#FDF0C8">
+          <path d="M120 84 c.9 6.6 3.2 8.9 9.8 9.8 c-6.6 .9 -8.9 3.2 -9.8 9.8 c-.9 -6.6 -3.2 -8.9 -9.8 -9.8 c6.6 -.9 8.9 -3.2 9.8 -9.8Z"/>
+          <path d="M560 250 c.7 5 2.4 6.7 7.4 7.4 c-5 .7 -6.7 2.4 -7.4 7.4 c-.7 -5 -2.4 -6.7 -7.4 -7.4 c5 -.7 6.7 -2.4 7.4 -7.4Z"/>
+          <path d="M636 210 c.5 3.8 1.8 5.1 5.6 5.6 c-3.8 .5 -5.1 1.8 -5.6 5.6 c-.5 -3.8 -1.8 -5.1 -5.6 -5.6 c3.8 -.5 5.1 -1.8 5.6 -5.6Z"/>
+        </g>
+      </g>
+      <path d="M40 500 V240 A310 235 0 0 1 660 240 V500" fill="none" stroke="#F9F4DE" stroke-width="2.5"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ══════════ LA NIT · peu ══════════ -->
+<footer class="seccio peu" data-sky="#3A0821" style="position:relative;">
+  <div class="cel-estrelles" id="estrelles" aria-hidden="true"></div>
+  <div class="contingut revela" style="position:relative;">
+    <img class="mono" src="/assets/img/a1af818a8ee.png" alt="Monograma GM">
+    <p>Tenim moltes ganes de ballar junts.</p>
+    <div class="linia">
+      <a class="insta-enllac" href="https://instagram.com/omgenscasem" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.4" cy="6.6" r="1"/></svg>
+        @omgenscasem
+      </a>
+    </div>
+    <p style="margin-top:1.2rem;"><a class="enllac" href="mailto:omgenscasem@gmail.com?subject=Dubte%20sobre%20la%20boda%20%E2%9C%A6">✦ escriu-nos ✦</a></p>
+    <p style="margin-top:2.2rem; font-size:.78rem; opacity:.85;">fet amb ♥ i la supervisió de quatre gats</p>
+    <p id="postes-vistes" style="margin-top:.5rem; font-size:.72rem; opacity:.6;" hidden></p>
+    <div class="constel-bloc">
+      <h3 class="titol" style="margin-top:3.5rem;"><span class="ini">L</span>ES NOSTRES <span class="ini">C</span>ONSTEL·LACIONS</h3>
+      <p class="prem-pista" style="font-size:.8rem; opacity:.85; margin-top:.8rem;" aria-hidden="true">passa el cursor (o toca) cada constel·lació</p>
+        <div class="constel-graella" id="constel-graella"></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ LIGHTBOX DE FOTOS ══════════ -->
+<div class="llum-vel" id="llum" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="llum-fletxa llum-fletxa--esq" id="llum-ant" type="button" aria-label="Foto anterior">‹</button>
+  <img id="llum-img" src="" alt="Foto ampliada de Marta i Guille">
+  <button class="llum-fletxa llum-fletxa--dre" id="llum-seg" type="button" aria-label="Foto següent">›</button>
+  <button class="llum-tancar" id="llum-tancar" type="button">✦ tancar ✦</button>
+</div>
+
+<!-- ══════════ MENÚ MÒBIL ══════════ -->
+<button id="menu-boto" type="button" aria-haspopup="dialog" aria-label="Obrir el menú">
+  <img src="/assets/img/a1af818a8ee.png" alt="">
+</button>
+<div class="menu-vel" id="menu" role="dialog" aria-modal="true" aria-label="Menú de seccions">
+  <ul>
+    <li><a href="#historia">la història</a></li>
+    <li><a href="#gran-dia">el gran dia</a></li>
+    <li><a href="#arribar">com arribar-hi</a></li>
+    <li><a href="#dormir">on dormir</a></li>
+    <li><a href="#colors">els colors</a></li>
+    <li><a href="#confirmar">confirmeu</a></li>
+    <li><a href="#regal">el regal</a></li>
+    <li><a href="#galeria">la galeria</a></li>
+  </ul>
+</div>
+
+
+<script is:inline>
+const REDUIT = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+
+let nitVisible = false;
+/* ── Preloader: monograma bategant fins que tot està a punt ── */
+const preload = document.getElementById('preload');
+const tPre = Date.now();
+window.addEventListener('load', () => {
+  setTimeout(() => preload.classList.add('fet'), Math.max(0, 900 - (Date.now() - tPre)));
+});
+setTimeout(() => preload.classList.add('fet'), 3500); // xarxa lenta: no bloquejar mai
+
+
+/* ── El sobre + confeti de destells ── */
+const sobre = document.getElementById('sobre');
+const DESTELL_PATH = 'M13 0C14.2 8.8 17.2 11.8 26 13c-8.8 1.2-11.8 4.2-13 13-1.2-8.8-4.2-11.8-13-13C8.8 11.8 11.8 8.8 13 0Z';
+function soDeLacre() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const t0 = ctx.currentTime;
+    // "crac" de paper i cera: ràfega de soroll filtrat + cop greu
+    const durada = 0.22;
+    const buf = ctx.createBuffer(1, ctx.sampleRate * durada, ctx.sampleRate);
+    const dades = buf.getChannelData(0);
+    for (let i = 0; i < dades.length; i++) dades[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / dades.length, 2.2);
+    const soroll = ctx.createBufferSource(); soroll.buffer = buf;
+    const filtre = ctx.createBiquadFilter();
+    filtre.type = 'bandpass'; filtre.frequency.setValueAtTime(2400, t0);
+    filtre.frequency.exponentialRampToValueAtTime(700, t0 + durada); filtre.Q.value = 0.8;
+    const gs = ctx.createGain(); gs.gain.setValueAtTime(0.5, t0);
+    soroll.connect(filtre).connect(gs).connect(ctx.destination);
+    const osc = ctx.createOscillator(); osc.type = 'sine';
+    osc.frequency.setValueAtTime(120, t0); osc.frequency.exponentialRampToValueAtTime(48, t0 + 0.16);
+    const go = ctx.createGain();
+    go.gain.setValueAtTime(0.35, t0); go.gain.exponentialRampToValueAtTime(0.001, t0 + 0.18);
+    osc.connect(go).connect(ctx.destination);
+    soroll.start(t0); osc.start(t0); osc.stop(t0 + 0.2);
+  } catch { /* sense àudio, cap problema */ }
+}
+document.getElementById('segell').addEventListener('click', (ev) => {
+  if (document.body.dataset.clauOk !== '1') return; // la porta la gestiona el bloc independent
+  soDeLacre();
+  if (navigator.vibrate) navigator.vibrate([28, 40, 18]);
+  const r = ev.currentTarget.getBoundingClientRect();
+  const ox = r.left + r.width/2, oy = r.top + r.height/2;
+  for (let i = 0; i < 26; i++) {
+    const c = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    c.setAttribute('viewBox','0 0 26 26');
+    c.classList.add('confeti');
+    const ang = Math.random() * Math.PI * 2, dist = 90 + Math.random() * 240;
+    c.style.left = (ox - 8) + 'px';
+    c.style.top = (oy - 8) + 'px';
+    c.style.setProperty('--dx', Math.cos(ang) * dist + 'px');
+    c.style.setProperty('--dy', (Math.sin(ang) * dist - 60) + 'px');
+    c.style.setProperty('--gir', (Math.random() * 220 - 110) + 'deg');
+    c.style.width = (9 + Math.random() * 13) + 'px';
+    c.innerHTML = `<path d="${DESTELL_PATH}"/>`;
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 1600);
+  }
+  sobre.classList.add('obert');
+  document.body.classList.remove('tancat');
+  try { localStorage.setItem('sobreObert', '1'); } catch {}
+  const fes = document.getElementById('fes-scroll');
+  setTimeout(() => fes.classList.add('visible'), 1800);
+  window.addEventListener('scroll', () => fes.classList.remove('visible'), { once: true, passive: true });
+});
+
+</script>
+<script is:inline>
+/* ── Farolets lliures: els dos de la invitació (nets), només pels laterals.
+   Si trepitgen informació, desapareixen del tot fins apartar-se. ── */
+const farolets = [];
+(function crearFarolets() {
+  const tipus = [
+    { src: '/assets/img/a6cca722918.webp', banda: 'esq' },
+    { src: '/assets/img/a0d20825137.webp',  banda: 'dre' },
+  ];
+  tipus.forEach((cfg, i) => {
+    const el = document.createElement('img');
+    el.src = cfg.src;
+    el.alt = '';
+    el.className = 'farolet-lliure';
+    const esMobil = window.innerWidth < 700;
+    const mida = esMobil ? 34 + Math.random() * 14 : 78 + Math.random() * 40;
+    el.style.width = mida + 'px';
+    document.body.appendChild(el);
+    farolets.push({ el, mida, banda: cfg.banda, x: 0, y: 120 + i * 300, tx: 0, ty: 0, fase: Math.random() * Math.PI * 2, idx: i });
+  });
+})();
+const ESMOBIL_FL = window.innerWidth < 700;
+function bandaX(fl) {
+  // banda lateral: mai pel mig. Al mòbil, banda més estreta i el farolet
+  // de l'esquerra queda més a prop del marge perquè no quedi tapat pel contingut.
+  const ampladaBanda = ESMOBIL_FL
+    ? Math.max(fl.mida + 4, window.innerWidth * 0.08)
+    : Math.max(fl.mida + 10, window.innerWidth * 0.16);
+  if (fl.banda === 'esq') return 4 + Math.random() * Math.max(4, ampladaBanda - fl.mida - 4);
+  return window.innerWidth - ampladaBanda + Math.random() * Math.max(4, ampladaBanda - fl.mida - 4);
+}
+function nouDesti(fl) {
+  fl.tx = bandaX(fl);
+  // Al web, el farolet de l'esquerra es mou molt menys (roman més quiet).
+  if (!ESMOBIL_FL && fl.banda === 'esq') {
+    fl.ty = fl.ty || (window.innerHeight * 0.4);
+    fl.ty += (Math.random() - 0.5) * 60;
+    fl.ty = Math.max(70, Math.min(window.innerHeight - fl.mida * 2.4, fl.ty));
+  } else {
+    fl.ty = 70 + Math.random() * Math.max(120, window.innerHeight - fl.mida * 2.4 - 100);
+  }
+}
+farolets.forEach(fl => { fl.x = bandaX(fl); nouDesti(fl); });
+function derivaFarolets(ts) {
+  farolets.forEach(fl => {
+    const dx = fl.tx - fl.x, dy = fl.ty - fl.y;
+    if (Math.hypot(dx, dy) < 12) nouDesti(fl);
+    fl.x += dx * 0.0014; fl.y += dy * 0.0014;
+    const balanceig = Math.sin(ts / 1500 + fl.fase) * 3;
+    fl.el.style.transform = `translate(${fl.x}px, ${fl.y}px) rotate(${balanceig}deg)`;
+  });
+  if (!REDUIT) requestAnimationFrame(derivaFarolets);
+}
+if (REDUIT) {
+  farolets.forEach((fl, i) => { fl.el.style.transform = `translate(${i ? window.innerWidth - fl.mida - 12 : 12}px, ${160 + i * 300}px)`; });
+} else {
+  requestAnimationFrame(derivaFarolets);
+}
+window.addEventListener('resize', () => farolets.forEach(nouDesti));
+
+/* Al mòbil, com que el contingut ocupa gairebé tota l'amplada, els farolets
+   es van "turnant": només un és visible a la vegada, alternant cada uns segons,
+   en comptes de quedar amagats permanentment per xocar amb el text. */
+let flTornActiu = 0;
+if (ESMOBIL_FL) {
+  setInterval(() => { flTornActiu = (flTornActiu + 1) % farolets.length; }, 5000);
+}
+
+setInterval(() => {
+  const doc = document.documentElement;
+  const pNit = doc.scrollTop / Math.max(1, doc.scrollHeight - window.innerHeight);
+  const blocs = [...document.querySelectorAll('.contingut, .nav')].map(b => b.getBoundingClientRect());
+  farolets.forEach(fl => {
+    fl.el.classList.toggle('ences', pNit > 0.58);
+    if (ESMOBIL_FL) {
+      fl.el.classList.toggle('discret', fl.idx !== flTornActiu);
+      return;
+    }
+    const r = fl.el.getBoundingClientRect();
+    const sobreInfo = blocs.some(b => r.left < b.right && r.right > b.left && r.top < b.bottom && r.bottom > b.top);
+    fl.el.classList.toggle('discret', sobreInfo);
+  });
+}, 250);
+
+</script>
+<script is:inline>
+/* ── El dia de la boda: "és avui" i agenda en directe ── */
+function aMadrid() {
+  const p = new Intl.DateTimeFormat('ca-ES', { timeZone: 'Europe/Madrid', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+  const g = k => p.find(x => x.type === k).value;
+  return { data: `${g('year')}-${g('month')}-${g('day')}`, minuts: parseInt(g('hour')) * 60 + parseInt(g('minute')) };
+}
+function modeAvui() {
+  const ara = aMadrid();
+  if (ara.data === '2027-07-02' || ara.data === '2027-07-03') {
+    document.getElementById('compte').innerHTML = '<span class="es-avui">✦ ÉS AVUI ✦</span>';
+    const hores = [18*60, 18*60+18, 19*60+19, 24*60];
+    const min = ara.data === '2027-07-03' ? 24*60 : ara.minuts;
+    document.querySelectorAll('.agenda li').forEach((li, i) => {
+      const seguent = hores[i+1] !== undefined ? hores[i+1] : Infinity;
+      li.classList.toggle('ara', min >= hores[i] && min < seguent);
+    });
+  } else if (ara.data > '2027-07-03') {
+    document.getElementById('compte').innerHTML = '<span class="es-avui">✦ ENS HEM CASAT ✦</span>';
+  }
+}
+modeAvui();
+setInterval(modeAvui, 60000);
+
+
+
+</script>
+<script is:inline>
+/* ── Compte enrere fins al sí, vull ── */
+const OBJECTIU = new Date('2027-07-02T18:00:00+02:00').getTime();
+function actualitzaCompte() {
+  let d = Math.max(0, OBJECTIU - Date.now());
+  const dies = Math.floor(d / 864e5); d -= dies * 864e5;
+  const hores = Math.floor(d / 36e5); d -= hores * 36e5;
+  const mins = Math.floor(d / 6e4); d -= mins * 6e4;
+  document.getElementById('c-dies').textContent = dies;
+  document.getElementById('c-postes').textContent = Math.ceil(Math.max(0, OBJECTIU - Date.now()) / 864e5);
+  document.getElementById('c-hores').textContent = String(hores).padStart(2,'0');
+  document.getElementById('c-mins').textContent = String(mins).padStart(2,'0');
+  document.getElementById('c-segs').textContent = String(Math.floor(d/1e3)).padStart(2,'0');
+}
+actualitzaCompte();
+setInterval(actualitzaCompte, 1000);
+
+/* Títol de pestanya viu */
+const TITOL_BASE = document.title;
+let titolAlt = false;
+setInterval(() => {
+  titolAlt = !titolAlt;
+  const postes = document.getElementById('c-postes').textContent;
+  document.title = titolAlt && postes !== '—' ? `queden ${postes} postes de sol ✦` : TITOL_BASE;
+}, 4000);
+
+</script>
+<script is:inline>
+/* ── Guarda la data (.ics) ── */
+const ICS = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//omgenscasem//CA','BEGIN:VEVENT',
+  'UID:boda-marta-guille-2027@omgenscasem.art','DTSTAMP:20260707T120000Z',
+  'DTSTART;TZID=Europe/Madrid:20270702T180000','DTEND;TZID=Europe/Madrid:20270703T030000',
+  'SUMMARY:Boda de la Marta i el Guille',
+  'LOCATION:Torre Sever\\, Caldes de Montbui',
+  'DESCRIPTION:The Sunset Wedding · omgenscasem.art',
+  'END:VEVENT','END:VCALENDAR'].join('\r\n');
+document.getElementById('ics').href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ICS);
+
+</script>
+<script is:inline>
+/* ── El cel que es pon amb l'scroll ── */
+const cel = document.getElementById('cel');
+const seccions = [...document.querySelectorAll('[data-sky]')];
+function hex2rgb(h){h=h.replace('#','');return [0,2,4].map(i=>parseInt(h.slice(i,i+2),16));}
+function rgb2css(c){return `rgb(${c.map(Math.round).join(',')})`;}
+function barreja(a,b,t){return a.map((v,i)=>v+(b[i]-v)*t);}
+let colors = seccions.map(s => hex2rgb(s.dataset.sky));
+/* Mode vespre: si el visitant obre la web de nit, el cel comença més endins de la posta */
+const horaLocal = new Date().getHours();
+if (horaLocal >= 20 || horaLocal < 6) {
+  colors = colors.map((c, i) => barreja(c, colors[Math.min(i + 1, colors.length - 1)], 0.45));
+}
+const progres = document.getElementById('progres');
+let bandaPrevia = -1;
+function destellDeBanda() {
+  const d = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  d.setAttribute('viewBox','0 0 26 26');
+  d.classList.add('transicio-destell');
+  d.style.left = (14 + Math.random() * 72) + 'vw';
+  d.style.top = (12 + Math.random() * 30) + 'vh';
+  d.innerHTML = '<path d="M13 0C14.2 8.8 17.2 11.8 26 13c-8.8 1.2-11.8 4.2-13 13-1.2-8.8-4.2-11.8-13-13C8.8 11.8 11.8 8.8 13 0Z"/>';
+  document.body.appendChild(d);
+  setTimeout(() => d.remove(), 1100);
+}
+function pintaCel(){
+  const doc = document.documentElement;
+  progres.style.width = (Math.min(1, doc.scrollTop / (doc.scrollHeight - window.innerHeight)) * 100) + '%';
+  const mig = window.innerHeight * 0.5;
+  let i = 0;
+  for (let k = 0; k < seccions.length; k++) {
+    if (seccions[k].getBoundingClientRect().top + seccions[k].getBoundingClientRect().height/2 <= mig) i = k;
+  }
+  if (bandaPrevia !== -1 && i !== bandaPrevia) destellDeBanda();
+  bandaPrevia = i;
+  if (i < seccions.length - 1) {
+    const r1 = seccions[i].getBoundingClientRect(), r2 = seccions[i+1].getBoundingClientRect();
+    const c1 = r1.top + r1.height/2, c2 = r2.top + r2.height/2;
+    const t = Math.min(1, Math.max(0, (mig - c1) / (c2 - c1)));
+    const c = rgb2css(barreja(colors[i], colors[i+1], t));
+    cel.style.backgroundColor = c;
+    progres.style.backgroundColor = c;
+    progres.style.filter = 'brightness(1.5)';
+  } else {
+    cel.style.backgroundColor = rgb2css(colors[i]);
+    progres.style.backgroundColor = rgb2css(colors[i]);
+    progres.style.filter = 'brightness(1.6)';
+  }
+}
+
+/* ── L'astre fix: sol que canvia de color i que la nit mosega fins deixar només la lluna ── */
+const astre = document.getElementById('astre');
+const disc = document.getElementById('disc');
+const mossec = document.getElementById('mossec');
+const SOL_TARDA = [250, 210, 104];    // groc de tarda
+const SOL_POSTA = [222, 106, 48];     // taronja de posta
+const LLUNA_CREMA = [249, 244, 222];  // crema de la lluna
+function corba(x){ return x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x); }
+function mouSol(){
+  const doc = document.documentElement;
+  const p = Math.min(1, doc.scrollTop / (doc.scrollHeight - window.innerHeight));
+  const tPosta = corba(p / 0.6);                 // groc → taronja mentre cau la tarda
+  const tNit = corba((p - 0.62) / 0.24);         // la nit mossega el disc
+  const color = tNit <= 0
+    ? barreja(SOL_TARDA, SOL_POSTA, tPosta)
+    : barreja(SOL_POSTA, LLUNA_CREMA, tNit);     // la part que queda es torna lluna
+  disc.setAttribute('fill', rgb2css(color));
+  // El mossec entra des de la dreta: de fora (185) fins a deixar una lluna creixent (66)
+  mossec.setAttribute('cx', 185 - tNit * 119);
+  astre.style.setProperty('--resplendor', String(1 - tNit)); // la resplendor del sol s'apaga
+}
+const fotosTira = [...document.querySelectorAll('.tira img')];
+function parallaxFotos(){
+  if (REDUIT || !fotosTira.length) return;
+  const r = fotosTira[0].parentElement.getBoundingClientRect();
+  const d = (r.top + r.height/2 - window.innerHeight/2) / window.innerHeight;
+  fotosTira.forEach((im, i) => {
+    im.style.translate = `0 ${(d * (i % 2 ? -26 : 26)).toFixed(1)}px`;
+  });
+}
+const rajosEl = document.querySelector('.rajos');
+const granDiaSec = document.getElementById('gran-dia');
+function expandeixRajos(){
+  if (!rajosEl) return;
+  const r = granDiaSec.getBoundingClientRect();
+  const p = Math.min(1, Math.max(0, 1 - r.top / window.innerHeight));
+  const esc = 0.55 + 0.45 * p;
+  rajosEl.style.transform = `translateY(-40%) scale(${esc.toFixed(3)})`;
+  rajosEl.style.opacity = (0.25 + 0.75 * p).toFixed(2);
+}
+function enScroll(){ pintaCel(); mouSol(); parallaxFotos(); expandeixRajos(); }
+enScroll();
+window.addEventListener('scroll', enScroll, { passive: true });
+window.addEventListener('resize', enScroll);
+
+</script>
+<script is:inline>
+/* ── Aparició en fer scroll (ES5 + pla B: mai deixar el contingut invisible) ── */
+(function () {
+  var llista = document.querySelectorAll('.revela');
+  function mostraTot() {
+    for (var i = 0; i < llista.length; i++) llista[i].className += ' vist';
+  }
+  if (!('IntersectionObserver' in window)) { mostraTot(); return; }
+  try {
+    var io = new IntersectionObserver(function (entrades) {
+      for (var i = 0; i < entrades.length; i++) {
+        if (entrades[i].isIntersecting) entrades[i].target.classList.add('vist');
+      }
+    }, { threshold: 0.12 });
+    for (var j = 0; j < llista.length; j++) io.observe(llista[j]);
+  } catch (e) { mostraTot(); }
+})();
+
+</script>
+<script is:inline>
+/* ── Petjades que creuen la pantalla (un cop per secció clau) ── */
+const POTA = '<svg viewBox="0 0 26 26"><ellipse cx="13" cy="19" rx="6.4" ry="5.2"/><circle cx="5.4" cy="10.5" r="2.7"/><circle cx="13" cy="7.6" r="2.9"/><circle cx="20.6" cy="10.5" r="2.7"/></svg>';
+function rastreDePotes() {
+  const puja = Math.random() < .5;
+  for (let i = 0; i < 7; i++) {
+    setTimeout(() => {
+      const p = document.createElement('div');
+      p.className = 'petjada';
+      p.innerHTML = POTA;
+      const x = 8 + i * 12;
+      const y = puja ? 86 - i * 3 : 68 + i * 3;
+      p.style.left = x + 'vw';
+      p.style.top = y + 'vh';
+      p.style.transform = `rotate(${(puja ? 62 : 118) + (i % 2 ? 14 : -14)}deg)`;
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), 2400);
+    }, i * 320);
+  }
+}
+let potesFetes = new Set();
+const ioPotes = ('IntersectionObserver' in window) && new IntersectionObserver(entrades => {
+  entrades.forEach(e => {
+    if (e.isIntersecting && !potesFetes.has(e.target.id)) {
+      potesFetes.add(e.target.id);
+      rastreDePotes();
+    }
+  });
+}, { threshold: 0.4 });
+if (ioPotes) ['historia', 'colors'].forEach(id => ioPotes.observe(document.getElementById(id)));
+
+</script>
+<script is:inline>
+/* ── Estrelles de la nit (una és un gat) ── */
+const celNit = document.getElementById('estrelles');
+const DESTELL = 'M13 0C14.2 8.8 17.2 11.8 26 13c-8.8 1.2-11.8 4.2-13 13-1.2-8.8-4.2-11.8-13-13C8.8 11.8 11.8 8.8 13 0Z';
+const GAT = 'M4 22c0-7 3-11 3-11L5 4l5 3c1.4-.5 4.6-.5 6 0l5-3-2 7s3 4 3 11H4Z';
+for (let i = 0; i < 14; i++) {
+  const esGat = i === 7;
+  const s = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  s.setAttribute('viewBox','0 0 26 26');
+  s.classList.add('estrella');
+  s.style.width = (esGat ? 15 : 6 + Math.random()*10) + 'px';
+  s.style.left = (4 + Math.random()*92) + '%';
+  s.style.top = (4 + Math.random()*70) + '%';
+  s.style.animationDelay = (Math.random()*3) + 's';
+  s.innerHTML = `<path d="${esGat ? GAT : DESTELL}"/>`;
+  if (esGat) { const t = document.createElementNS('http://www.w3.org/2000/svg','title'); t.textContent = 'miau'; s.appendChild(t); }
+  celNit.appendChild(s);
+}
+/* Constel·lacions dels gats: silueta clara de gat assegut; s'uneixen soles en aparèixer, i es poden tocar */
+const PUNTS_GAT = [[6,88],[16,95],[28,87],[33,64],[42,46],[52,30],[55,22],[58,10],[63,16],[68,15],[72,6],[76,18],[84,27],[84,37],[74,53],[74,71],[71,92]];
+const graellaConst = document.getElementById('constel-graella');
+const NOMS_GATS = ['Tofu', 'Tala', 'Iro', 'Ker'];
+/* Mapa nom del gat -> foto (versió petita per a la constel·lació, gran per ampliar-la en clicar) */
+const FOTOS_GATS = {
+  "Tofu": "/assets/img/abdde339fd3.webp",
+  "Tala": "/assets/img/a9edfe63518.webp",
+  "Iro": "/assets/img/acb80881b08.webp",
+  "Ker": "/assets/img/ad2c83b0520.webp"
+};
+const FOTOS_GATS_GRAN = {
+  "Tofu": "/assets/img/a06fedfbc67.webp",
+  "Tala": "/assets/img/af4292af940.webp",
+  "Iro": "/assets/img/a77c2f9bd55.webp",
+  "Ker": "/assets/img/a86525df898.webp"
+};
+[1, -1, 1, -1].forEach((mirall, idx) => {
+  const nom = NOMS_GATS[idx];
+  const item = document.createElement('div');
+  item.classList.add('constellacio-item');
+
+  const foto = document.createElement('img');
+  foto.className = 'constellacio-foto';
+  foto.loading = 'lazy';
+  foto.alt = 'Foto de ' + nom;
+  if (FOTOS_GATS[nom]) foto.src = FOTOS_GATS[nom];
+  foto.addEventListener('click', e => {
+    e.stopPropagation();
+    obreLlumDirecta(FOTOS_GATS_GRAN[nom] || FOTOS_GATS[nom], 'Foto de ' + nom);
+  });
+
+  const g = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  g.setAttribute('viewBox','0 0 100 112');
+  g.classList.add('constellacio');
+  if (mirall < 0) g.style.transform = 'scaleX(-1)';
+  const pts = PUNTS_GAT.map(([x,y]) => `${x},${y}`).join(' ');
+  const cercles = PUNTS_GAT.map(([x,y],i) => `<circle cx="${x}" cy="${y}" r="${i%3===0?2.4:1.6}"/>`).join('');
+  g.innerHTML = `<polyline points="${pts}"/>` + cercles +
+    `<text x="50" y="108" text-anchor="middle"${mirall<0?' transform="scale(-1,1) translate(-100,0)"':''}>${nom}</text>`;
+  g.addEventListener('pointerdown', () => { g.classList.toggle('unida'); item.classList.toggle('actiu'); });
+
+  item.appendChild(foto);
+  item.appendChild(g);
+  graellaConst.appendChild(item);
+});
+const ioConst = ('IntersectionObserver' in window) && new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) {
+    [...graellaConst.querySelectorAll('.constellacio')].forEach((g, i) => setTimeout(() => g.classList.add('unida'), 300 + i * 650));
+    ioConst.disconnect();
+  }
+}), { threshold: 0.35 });
+if (ioConst) ioConst.observe(graellaConst); else [...graellaConst.querySelectorAll('.constellacio')].forEach(g => g.classList.add('unida'));
+
+const ioNit = ('IntersectionObserver' in window) && new IntersectionObserver(es => es.forEach(e => nitVisible = e.isIntersecting), { threshold: 0.2 });
+if (ioNit) ioNit.observe(celNit.parentElement); else nitVisible = true;
+function estrellaFugac() {
+  const fg = document.createElement('div');
+  fg.className = 'fugac2';
+  // Direcció totalment lliure: qualsevol angle del cel
+  const angle = Math.random() * Math.PI * 2;
+  fg.style.left = (18 + Math.random() * 64) + '%';
+  fg.style.top = (10 + Math.random() * 55) + '%';
+  const durada = 1.6 + Math.random() * 0.9;
+  fg.style.setProperty('--durada', durada + 's');
+  fg.style.setProperty('--cua', (100 + Math.random() * 70) + 'px');
+  const llarg = 300 + Math.random() * 160;
+  const fx = Math.cos(angle) * llarg, fy = Math.sin(angle) * llarg;
+  const corbat = (Math.random() * 90 - 45);
+  const cx = fx / 2 - Math.sin(angle) * corbat, cy = fy / 2 + Math.cos(angle) * corbat;
+  fg.style.offsetPath = `path('M0,0 Q ${cx.toFixed(0)},${cy.toFixed(0)} ${fx.toFixed(0)},${fy.toFixed(0)}')`;
+  fg.innerHTML = `<div class="cua"></div><div class="cap"><svg viewBox="0 0 26 26"><path d="${DESTELL}"/></svg></div>`;
+  celNit.appendChild(fg);
+  // Espurnes que va deixant pel camí
+  let n = 0;
+  const espurnes = setInterval(() => {
+    if (++n > 7) { clearInterval(espurnes); return; }
+    const r = fg.getBoundingClientRect(), rc = celNit.getBoundingClientRect();
+    if (!r.width) return;
+    const e = document.createElement('div');
+    e.className = 'espurna';
+    e.style.left = (r.left - rc.left + 4) + 'px';
+    e.style.top = (r.top - rc.top + 4) + 'px';
+    e.style.setProperty('--ex', (Math.random() * 26 - 13) + 'px');
+    e.style.setProperty('--ey', (Math.random() * 20 - 4) + 'px');
+    celNit.appendChild(e);
+    setTimeout(() => e.remove(), 1000);
+  }, durada * 110);
+  setTimeout(() => fg.remove(), durada * 1000 + 200);
+}
+setInterval(() => { if (nitVisible && Math.random() > 0.3) estrellaFugac(); }, 6000);
+
+</script>
+<script is:inline>
+</script>
+<script is:inline>
+/* ── Tocar (o passar el cursor per sobre) un color de la paleta el prova com a cel un instant ── */
+let coloraTimer = null;
+document.querySelectorAll('.paleta[aria-label="Colors benvinguts"] .mostra').forEach(m => {
+  m.style.cursor = 'pointer';
+  const prova = () => {
+    const cel = document.getElementById('cel');
+    cel.style.backgroundColor = m.style.background;
+    clearTimeout(coloraTimer);
+    coloraTimer = setTimeout(() => { if (typeof pintaCel === 'function') pintaCel(); }, 1300);
+  };
+  m.addEventListener('click', prova);
+  m.addEventListener('mouseenter', prova);
+});
+
+/* ── Formulari de confirmació (Vindràs?) ── */
+(function () {
+  const form = document.getElementById('form-rsvp');
+  if (!form) return;
+
+  function configuraSiNo(grupId, alTriar) {
+    const grup = document.getElementById(grupId);
+    if (!grup) return;
+    grup.querySelectorAll('button').forEach(b => {
+      b.addEventListener('click', () => {
+        grup.querySelectorAll('button').forEach(x => x.classList.remove('triat'));
+        b.classList.add('triat');
+        if (alTriar) alTriar(b.dataset.valor);
+      });
+    });
+  }
+
+  configuraSiNo('rsvp-vindras', valor => {
+    document.getElementById('rsvp-bloc-detalls').classList.toggle('visible', valor === 'si');
+  });
+  configuraSiNo('rsvp-acompanyant', valor => {
+    document.getElementById('rsvp-acompanyant-detall').classList.toggle('visible', valor === 'si');
+  });
+  configuraSiNo('rsvp-nens', valor => {
+    document.getElementById('rsvp-nens-detall').classList.toggle('visible', valor === 'si');
+  });
+  configuraSiNo('rsvp-autocar', valor => {
+    document.getElementById('rsvp-autocar-detall').classList.toggle('visible', valor === 'si');
+  });
+  configuraSiNo('rsvp-dormir');
+
+  const camp = n => form.elements.namedItem(n);
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const vindra = (function(){ var e = document.querySelector('#rsvp-vindras .triat'); return e ? e.dataset.valor : null; })();
+    const errors = document.getElementById('rsvp-errors');
+    if (!camp('nom').value.trim() || !camp('cognoms').value.trim() || !camp('contacte').value.trim() || !vindra) {
+      errors.textContent = 'Falta el nom, els cognoms, el contacte o dir-nos si vindràs — completa-ho abans d\'enviar.';
+      errors.hidden = false;
+      try { errors.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
+      return;
+    }
+    errors.hidden = true;
+
+    const dades = {
+      nom: camp('nom').value,
+      cognoms: camp('cognoms').value,
+      contacte: camp('contacte').value,
+      vindra,
+      menu: camp('menu').value,
+      allergies: camp('allergies').value,
+      acompanyant: (function(){ var e = document.querySelector('#rsvp-acompanyant .triat'); return e ? e.dataset.valor : null; })(),
+      acompanyantNom: camp('acompanyant_nom').value,
+      acompanyantCognoms: camp('acompanyant_cognoms').value,
+      acompanyantMenu: camp('acompanyant_menu').value,
+      acompanyantAllergies: camp('acompanyant_allergies').value,
+      nens: (function(){ var e = document.querySelector('#rsvp-nens .triat'); return e ? e.dataset.valor : null; })(),
+      nensDetall: camp('nens_detall').value,
+      autocar: (function(){ var e = document.querySelector('#rsvp-autocar .triat'); return e ? e.dataset.valor : null; })(),
+      autocarQuan: camp('autocar_quan').value,
+      dormir: (function(){ var e = document.querySelector('#rsvp-dormir .triat'); return e ? e.dataset.valor : null; })(),
+      canco: camp('canco').value,
+      especial: camp('especial').value,
+    };
+    try { localStorage.setItem('rsvp', JSON.stringify(dades)); } catch {}
+
+    /* Enviament directe al correu de Marta i Guille via FormSubmit,
+       sense que el convidat hagi d'obrir res. Si la xarxa falla,
+       pla B: correu ja redactat. */
+    const linies = [
+      `Nom: ${dades.nom} ${dades.cognoms}`,
+      `Contacte: ${dades.contacte}`,
+      `Vindrà: ${dades.vindra === 'si' ? 'Sí' : 'No'}`,
+    ];
+    if (dades.vindra === 'si') {
+      linies.push(
+        `Menú: ${dades.menu}`,
+        `Al·lèrgies o intoleràncies: ${dades.allergies || '—'}`,
+        `Ve amb acompanyant: ${dades.acompanyant === 'si' ? 'Sí' : 'No'}`,
+      );
+      if (dades.acompanyant === 'si') {
+        linies.push(
+          `  Nom acompanyant: ${dades.acompanyantNom} ${dades.acompanyantCognoms}`,
+          `  Menú acompanyant: ${dades.acompanyantMenu}`,
+          `  Al·lèrgies acompanyant: ${dades.acompanyantAllergies || '—'}`,
+        );
+      }
+      linies.push(`Ve amb nens/nenes: ${dades.nens === 'si' ? 'Sí' : 'No'}`);
+      if (dades.nens === 'si') linies.push(`  Detall nens: ${dades.nensDetall || '—'}`);
+      if (dades.autocar === 'si') linies.push(`Autocar: Sí (${dades.autocarQuan.replace(/-/g, ' ')})`);
+      else linies.push(`Autocar: No`);
+      linies.push(`Es quedaria a dormir: ${dades.dormir === 'si' ? 'Sí' : dades.dormir === 'no' ? 'No' : '—'}`);
+      if (dades.canco) linies.push(`Cançó per a la festa: ${dades.canco}`);
+      linies.push(
+        `Necessitats especials: ${dades.especial || '—'}`,
+      );
+    }
+    const cosText = linies.join('\n');
+    const assumpte = `Confirmació boda ✦ ${dades.nom} ${dades.cognoms}`;
+    const gracies = document.getElementById('rsvp-gracies');
+    const botoEnviar = form.querySelector('.form-enviar');
+
+    botoEnviar.disabled = true;
+    botoEnviar.textContent = 'Enviant…';
+
+    fetch('https://formsubmit.co/ajax/omgenscasem@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: assumpte,
+        _template: 'box',
+        _captcha: 'false',
+        'Resposta completa': cosText,
+      }),
+    })
+    .then(r => { if (!r.ok) throw new Error('resposta ' + r.status); return r.json(); })
+    .then(() => {
+      form.querySelectorAll('input, select, textarea, button').forEach(el => el.disabled = true);
+      gracies.textContent = 'Rebut! Moltes gràcies — ens veiem a la posta de sol ✦';
+      gracies.hidden = false;
+      try { gracies.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
+    })
+    .catch(() => {
+      /* Pla B: si l'enviament directe falla (sense connexió, bloquejadors...),
+         obrim un correu ja redactat perquè la resposta no es perdi mai. */
+      botoEnviar.disabled = false;
+      botoEnviar.textContent = 'Enviar confirmació';
+      gracies.textContent = "No hem pogut enviar-ho directament — s'obrirà el teu correu amb la resposta ja escrita: només cal prémer «enviar».";
+      gracies.hidden = false;
+      window.location.href = 'mailto:omgenscasem@gmail.com?subject=' + encodeURIComponent(assumpte) + '&body=' + encodeURIComponent(cosText);
+    });
+  });
+})();
+
+/* ── Postes de sol vistes amb nosaltres ── */
+try {
+  const n = (parseInt(localStorage.getItem('postesVistes') || '0') || 0) + 1;
+  localStorage.setItem('postesVistes', String(n));
+  if (n > 1) {
+    const pv = document.getElementById('postes-vistes');
+    pv.textContent = `és la teva ${n}a posta de sol amb nosaltres ✦`;
+    pv.hidden = false;
+  }
+} catch {}
+
+/* ── Copiar IBAN ── */
+document.getElementById('copiar-iban').addEventListener('click', async (e) => {
+  try {
+    await navigator.clipboard.writeText(document.getElementById('iban').textContent.trim());
+    e.target.textContent = 'Copiat ✦';
+    setTimeout(() => e.target.textContent = "Copiar l'IBAN", 2000);
+  } catch { /* sense permís de porta-retalls */ }
+});
+
+</script>
+<script is:inline>
+/* ── Punts laterals de navegació ── */
+const punts = document.getElementById('punts');
+const seccionsNav = ['historia','gran-dia','arribar','dormir','colors','confirmar','regal','galeria'];
+seccionsNav.forEach(id => {
+  const a = document.createElement('a');
+  a.href = '#' + id;
+  a.setAttribute('aria-label', id.replace('-', ' '));
+  punts.appendChild(a);
+});
+const ioPunts = ('IntersectionObserver' in window) && new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (e.isIntersecting) {
+      punts.querySelectorAll('a').forEach(a => a.classList.toggle('actiu', a.hash === '#' + e.target.id));
+    }
+  });
+}, { threshold: 0.45 });
+if (ioPunts) seccionsNav.forEach(id => ioPunts.observe(document.getElementById(id)));
+
+</script>
+<script is:inline>
+/* ── Lightbox de fotos ── */
+const llum = document.getElementById('llum');
+const llumImg = document.getElementById('llum-img');
+function obreLlumDirecta(src, alt) {
+  llumImg.src = src;
+  llumImg.alt = alt || '';
+  llum.classList.add('obert');
+}
+const fotosLlum = [...document.querySelectorAll('.tira img')];
+let llumIdx = 0;
+function obreLlum(i) {
+  llumIdx = (i + fotosLlum.length) % fotosLlum.length;
+  llumImg.src = fotosLlum[llumIdx].src;
+  llum.classList.add('obert');
+}
+let arrossegat = false;
+fotosLlum.forEach((im, i) => im.addEventListener('click', () => { if (!arrossegat) obreLlum(i); }));
+/* Polaroids arrossegables (escriptori) */
+if (window.matchMedia('(pointer: fine)').matches) {
+  fotosLlum.forEach(im => {
+    let px = 0, py = 0, dx = 0, dy = 0, actiu = false;
+    im.addEventListener('pointerdown', e => {
+      actiu = true; arrossegat = false;
+      px = e.clientX - dx; py = e.clientY - dy;
+      im.classList.add('agafada');
+      im.setPointerCapture(e.pointerId);
+    });
+    im.addEventListener('pointermove', e => {
+      if (!actiu) return;
+      dx = e.clientX - px; dy = e.clientY - py;
+      if (Math.hypot(dx, dy) > 6) arrossegat = true;
+      im.style.setProperty('--dx', dx + 'px');
+      im.style.setProperty('--dy', dy + 'px');
+    });
+    im.addEventListener('pointerup', () => { actiu = false; im.classList.remove('agafada'); setTimeout(() => arrossegat = false, 50); });
+  });
+}
+document.getElementById('llum-ant').addEventListener('click', () => obreLlum(llumIdx - 1));
+document.getElementById('llum-seg').addEventListener('click', () => obreLlum(llumIdx + 1));
+document.getElementById('llum-tancar').addEventListener('click', () => llum.classList.remove('obert'));
+llum.addEventListener('click', e => { if (e.target === llum) llum.classList.remove('obert'); });
+window.addEventListener('deviceorientation', (e) => {
+  if (!llum.classList.contains('obert') || e.gamma == null) return;
+  const gx = Math.max(-14, Math.min(14, e.gamma / 3));
+  const gy = Math.max(-10, Math.min(10, (e.beta - 45) / 4));
+  llumImg.style.transform = `rotateY(${gx}deg) rotateX(${(-gy).toFixed(1)}deg)`;
+});
+document.addEventListener('keydown', e => {
+  if (!llum.classList.contains('obert')) return;
+  if (e.key === 'Escape') llum.classList.remove('obert');
+  if (e.key === 'ArrowLeft') obreLlum(llumIdx - 1);
+  if (e.key === 'ArrowRight') obreLlum(llumIdx + 1);
+});
+
+</script>
+<script is:inline>
+/* ── Menú mòbil ── */
+const menu = document.getElementById('menu');
+document.getElementById('menu-boto').addEventListener('click', () => menu.classList.toggle('obert'));
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('obert')));
+menu.addEventListener('click', e => { if (e.target === menu) menu.classList.remove('obert'); });
+
+</script>
+<script is:inline>
+/* ── Mini-PWA: funciona sense cobertura un cop visitada ── */
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+</script>
+
+<!-- Cloudflare Web Analytics: activar a Cloudflare → Analytics → Web Analytics,
+     copiar el token i descomentar aquesta línia substituint [TOKEN]:
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "[TOKEN]"}'></script>
+-->
+<script is:inline>
+/* ── Porta d'entrada: contrasenya. Bloc totalment independent:
+     encara que qualsevol altra part fallés, això funciona sol. ── */
+(function () {
+  var CLAU = 'BODORRIO0207';
+  var input = document.getElementById('clau');
+  var sobre = document.getElementById('sobre');
+  var segell = document.getElementById('segell');
+  var pista = document.getElementById('sobre-pista');
+  if (!input || !sobre || !segell) return;
+
+  function recorda() { try { localStorage.setItem('clauOk', '1'); } catch (e) {} }
+  function recordada() { try { return localStorage.getItem('clauOk') === '1'; } catch (e) { return false; } }
+
+  function desbloqueja() {
+    document.body.dataset.clauOk = '1';
+    input.classList.add('correcta');
+    if (pista) pista.hidden = false;
+    recorda();
+  }
+  function esCorrecta() {
+    return input.value.replace(/\s/g, '').toUpperCase() === CLAU;
+  }
+  function sacseja() {
+    input.classList.remove('error');
+    void input.offsetWidth;
+    input.classList.add('error');
+    input.focus();
+  }
+  function obre() {
+    sobre.classList.add('obert');
+    document.body.classList.remove('tancat');
+  }
+
+  if (recordada()) {
+    desbloqueja();
+  }
+
+  if (window.innerWidth < 480) { input.placeholder = 'Contrasenya de convidat'; }
+  input.addEventListener('input', function () {
+    input.classList.remove('error');
+    if (esCorrecta()) desbloqueja();
+  });
+  input.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter') return;
+    if (esCorrecta() || document.body.dataset.clauOk === '1') { desbloqueja(); obre(); }
+    else sacseja();
+  });
+  segell.addEventListener('click', function () {
+    if (document.body.dataset.clauOk === '1') { obre(); }
+    else if (esCorrecta()) { desbloqueja(); obre(); }
+    else { sacseja(); }
+  });
+})();
+</script>
+<script is:inline>
+/* ── Ajust real dels títols d'una línia: es mesuren i s'encongeixen només si cal.
+     Compensa que les floritures de la lletra script sobresurten de la caixa del text. ── */
+(function () {
+  function ajusta(el, factor) {
+    if (!el) return;
+    el.style.fontSize = '';
+    var pare = el.parentElement;
+    if (!pare) return;
+    var max = pare.clientWidth * factor;
+    var mida = parseFloat(getComputedStyle(el).fontSize);
+    var seguretat = 60;
+    while (el.scrollWidth > max && mida > 12 && seguretat-- > 0) {
+      mida -= 1;
+      el.style.fontSize = mida + 'px';
+    }
+  }
+  function tots() {
+    ajusta(document.querySelector('.titol-nuvis'), 0.86);
+    ajusta(document.querySelector('.titol-linia'), 0.92);
+  }
+  tots();
+  window.addEventListener('load', tots);
+  window.addEventListener('resize', tots);
+  window.addEventListener('orientationchange', tots);
+  if (document.fonts && document.fonts.ready && document.fonts.ready.then) {
+    document.fonts.ready.then(tots);
+  }
+})();
+</script>
+<script is:inline>
+/* ── Ajust automàtic dels títols d'una línia: es mesuren de veritat i
+     s'escalen fins a cabre al dispositiu, sigui quin sigui. ── */
+(function () {
+  function ajusta(el) {
+    var pare = el.parentElement;
+    if (!pare) return;
+    var maxAmple = pare.clientWidth * 0.92;
+    var mida = Math.min(window.innerWidth * 0.085, 68); // punt de partida generós
+    el.style.fontSize = mida + 'px';
+    var seguretat = 40;
+    while (el.scrollWidth > maxAmple && mida > 13 && seguretat-- > 0) {
+      mida -= 1;
+      el.style.fontSize = mida + 'px';
+    }
+  }
+  function tots() {
+    document.querySelectorAll('.titol-ajusta').forEach(ajusta);
+  }
+  tots();
+  window.addEventListener('resize', tots);
+  window.addEventListener('load', tots);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(tots);
+})();
+</script>
+<script is:inline>
+/* ── Auto-encaix de títols: es mostren al màxim que hi cap, mai tallats.
+     Té en compte les floritures de la lletra script (marge de seguretat). ── */
+(function () {
+  function encaixa(el, factor) {
+    el.style.fontSize = '';
+    var pare = el.parentElement;
+    if (!pare) return;
+    var disponible = pare.clientWidth * factor;
+    if (!disponible) return;
+    var mida = parseFloat(getComputedStyle(el).fontSize);
+    var seguretat = 0;
+    while (el.scrollWidth > disponible && seguretat++ < 30) {
+      mida *= 0.94;
+      el.style.fontSize = mida.toFixed(1) + 'px';
+    }
+  }
+  function tots() {
+    var nuvis = document.querySelectorAll('.titol-nuvis');
+    var i;
+    for (i = 0; i < nuvis.length; i++) encaixa(nuvis[i], 0.86);
+    var linies = document.querySelectorAll('.titol-linia');
+    for (i = 0; i < linies.length; i++) encaixa(linies[i], 0.9);
+  }
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(tots); }
+  window.addEventListener('load', tots);
+  window.addEventListener('resize', tots);
+  window.addEventListener('orientationchange', tots);
+  tots();
+})();
+</script>
+<script is:inline>
+/* ── Encaix de títols d'una línia: mai sobrepassar la pantalla (ES5) ── */
+(function () {
+  function encaixa(el) {
+    if (!el) return;
+    el.style.fontSize = '';
+    var mida = parseFloat(window.getComputedStyle(el).fontSize);
+    var seguretat = 24;
+    while (el.scrollWidth > el.clientWidth + 1 && seguretat-- > 0 && mida > 12) {
+      mida *= 0.94;
+      el.style.fontSize = mida + 'px';
+    }
+  }
+  function tots() {
+    var seleccions = document.querySelectorAll('.titol-nuvis, h2.titol.titol-linia');
+    for (var i = 0; i < seleccions.length; i++) encaixa(seleccions[i]);
+  }
+  var temps;
+  function programat() { clearTimeout(temps); temps = setTimeout(tots, 150); }
+  if (document.fonts && document.fonts.ready && document.fonts.ready.then) {
+    document.fonts.ready.then(tots);
+  }
+  window.addEventListener('load', tots);
+  window.addEventListener('resize', programat);
+  window.addEventListener('orientationchange', programat);
+  tots();
+})();
+</script>
+<script is:inline>
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  navigator.serviceWorker.register('/sw.js').catch(function () {});
+}
+</script>
+</body>
+</html>
